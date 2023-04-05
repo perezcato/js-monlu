@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 
 import DataTable, { TableColumn } from 'react-data-table-component';
+import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 
 
 type DataRow = {
@@ -70,10 +71,7 @@ const Projects = () => {
         <div className="bg-white py-4 border px-3 col-span-2">
           {
             projectsMenu.map((menu) => (
-              <Link href={menu.url} className=" px-5 py-3 flex items-center space-x-3 cursor-pointer bg-gray-300 rounded">
-                <menu.icon className={'w-5 h-5 inline-block'} />
-                <div className="font-semibold text-gray-700">{menu.name}</div>
-              </Link>
+              <DashboardSideItems url={menu.url} name={menu.name} icon={menu.icon}  />
             ))
           }
         </div>
