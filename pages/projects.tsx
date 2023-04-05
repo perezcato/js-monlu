@@ -63,6 +63,7 @@ const data = [
     actions: 'here',
   },
 ]
+ const showFormHandler =() =>{console.log('click')}
 
 const Projects = () => {
   return (
@@ -84,7 +85,7 @@ const Projects = () => {
 
           <div className="flex items-center justify-between">
             <div className="text-xl">All Projects</div>
-            <button className="flex space-x-1 bg-gray-700 text-white px-5 py-4 rounded">
+            <button className="flex space-x-1 bg-gray-700 text-white px-5 py-4 rounded" onClick={showFormHandler}>
               <DocumentPlusIcon className="w-4 h-4" />
               <span className="inline-block text-xs">New Project</span>
             </button>
