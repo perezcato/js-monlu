@@ -2,12 +2,22 @@ import React from 'react';
 import Sidenav from "@/components/layout/sidenav";
 import Navbar from "@/components/layout/navbar";
 
-const DashboardLayout = () => {
+
+interface Props {
+  children: React.ReactNode | React.ReactNode[]
+  page: string
+}
+
+
+const DashboardLayout = (props: Props) => {
   return (
-    <div>
+    <div className="flex bg-gray-50">
       <Sidenav />
-      <div className="flex flex-col lg:pl-64">
-        <Navbar />
+      <div className="flex-1 flex flex-col min-h-screen">
+        <Navbar pageName={props.page} />
+        <div className="flex-1">
+          {props.children}
+        </div>
       </div>
     </div>
   );

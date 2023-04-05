@@ -13,7 +13,7 @@ const Sidenav = () => {
 
 
   return (
-    <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
+    <div className="hidden min-h-screen lg:flex lg:w-auto lg:flex-col">
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
         <div className="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
@@ -24,12 +24,6 @@ const Sidenav = () => {
               height={45}
               alt={'site logo'}
             />
-            <Image
-              src={'/assets/images/logoname.png'}
-              width={100}
-              height={45}
-              alt={'site name'}
-              />
           </Link>
         </div>
         <div className="flex flex-1 flex-col overflow-y-auto">
@@ -84,7 +78,7 @@ const Sidenav = () => {
                             return (
                               <Link
                                 key={sub.name}
-                                href={sub.href}
+                                href={sub.href ?? ''}
                                 className={classNames(
                                   'text-gray-300 hover:text-white',
                                   'group flex items-center px-6 py-2 text-sm font-medium rounded-md'
@@ -110,17 +104,17 @@ const Sidenav = () => {
                 }
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+                    'group flex items-center px-2 py-3 text-sm font-medium rounded-md flex items-center justify-center inline-block'
                   )}
                 >
                   <item.icon
                     className={classNames(
                       item.current ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-300',
-                      'mr-3 flex-shrink-0 h-6 w-6'
+                      'flex-shrink-0 h-6 w-6'
                     )}
                     aria-hidden="true"
                   />
-                  {item.name}
+
                 </Link>
               )
             })}
