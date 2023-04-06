@@ -1,8 +1,11 @@
 import {
-  AdjustmentsVerticalIcon,
   DocumentIcon,
   RectangleGroupIcon,
   ChartBarIcon,
+  UserPlusIcon,
+  BanknotesIcon,
+  ArrowPathIcon,
+  DocumentChartBarIcon
 } from "@heroicons/react/24/outline";
 
 export function classNames(...classes: string[]) {
@@ -49,22 +52,22 @@ export const projectsMenu = [
 export const exploreMenu = [
   {
     name: "Create Accounts",
-    icon: ChartBarIcon,
+    icon: UserPlusIcon,
     url: "/projects/explore",
   },
   {
     name: "Bank Accounts",
-    icon: ChartBarIcon,
+    icon: BanknotesIcon,
     url: "/projects/explore",
   },
   {
     name: "Reconcile Accounts",
-    icon: ChartBarIcon,
+    icon: ArrowPathIcon,
     url: "/projects/explore",
   },
   {
     name: "Reports",
-    icon: ChartBarIcon,
+    icon: DocumentChartBarIcon,
     url: "/projects/explore",
   },
 ];
