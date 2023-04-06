@@ -7,6 +7,7 @@ import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 import DataTable, { TableColumn } from "react-data-table-component";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import AddProject from "@/components/Modal";
+import { useRouter } from "next/router";
 
 type DataRow = {
   name: string;
@@ -69,10 +70,12 @@ const Projects = () => {
 
   const showFormHandler = () => setShowAddProject(true);
 
+  const router = useRouter();
+  const { exploreId } = router.query;
   return (
     <>
       <AddProject showModal={showAddProject} setShowModal={setShowAddProject} />
-      <DashboardLayout page={"Projects-Project Name"}>
+      <DashboardLayout page={`Projects- ${exploreId}`}>
         <div className="grid grid-cols-12 flex h-full ">
           <div className="bg-white py-4 border px-3 col-span-2 flex flex-col gap-2.5">
             {projectsMenu.map((menu) => (
@@ -94,7 +97,7 @@ const Projects = () => {
             <div className="space-x-2 text-sm font-semibold text-gray-700">
               <span className="inline-block">Projects</span>
               <span>{"/"}</span>
-              <span className="inline-block">Project Name</span>
+              <span className="inline-block">{exploreId}</span>
             </div>
           </div>
         </div>
