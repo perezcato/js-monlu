@@ -7,6 +7,7 @@ import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 import DataTable, { TableColumn } from "react-data-table-component";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import AddProject from "@/components/Modal";
+import {useRouter} from "next/router";
 
 type DataRow = {
   name: string;
@@ -68,6 +69,7 @@ type selectProjectName = string;
 
 const Projects = () => {
   const [showAddProject, setShowAddProject] = useState<boolean>(false);
+  const router = useRouter()
 
   const showFormHandler = () => setShowAddProject(true);
 
@@ -112,6 +114,7 @@ const Projects = () => {
                 responsive
                 pointerOnHover
                 highlightOnHover
+                onRowClicked={async (row: DataRow) => await router.push(`/projects/${row.name}`)}
               />
             </div>
           </div>
