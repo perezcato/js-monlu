@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import DashboardLayout from "@/components/layout";
 import {projectsMenu} from "@/lib";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 
 import DataTable, { TableColumn } from 'react-data-table-component';
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
+import AddProject from "@/components/Modal";
 
 
 type DataRow = {
@@ -63,48 +64,60 @@ const data = [
     actions: 'here',
   },
 ]
- const showFormHandler =() =>{console.log('click')}
+
 
 const Projects = () => {
+
+  const [showAddProject, setShowAddProject] = useState<boolean>(false)
+
+  const showFormHandler =() => setShowAddProject(true)
+
   return (
-    <DashboardLayout page={'Projects'}>
-      <div className="grid grid-cols-12 flex h-full">
-        <div className="bg-white py-4 border px-3 col-span-2">
-          {
-            projectsMenu.map((menu) => (
-              <DashboardSideItems url={menu.url} name={menu.name} icon={menu.icon}  />
-            ))
-          }
-        </div>
-        <div className="col-span-10 p-5 py-8 space-y-5">
-          <div className="space-x-2 text-sm font-semibold text-gray-700">
-            <span className="inline-block">Projects</span>
-            <span>{'/'}</span>
-            <span className="inline-block">Dashboard</span>
+    <>
+      <AddProject
+        showModal={showAddProject}
+        setShowModal={setShowAddProject}
+      />
+      <DashboardLayout page={'Projects'}>
+        <div className="grid grid-cols-12 flex h-full">
+          <div className="bg-white py-4 border px-3 col-span-2">
+            {
+              projectsMenu.map((menu) => (
+                <DashboardSideItems url={menu.url} name={menu.name} icon={menu.icon}  />
+              ))
+            }
           </div>
+          <div className="col-span-10 p-5 py-8 space-y-5">
+            <div className="space-x-2 text-sm font-semibold text-gray-700">
+              <span className="inline-block">Projects</span>
+              <span>{'/'}</span>
+              <span className="inline-block">Dashboard</span>
+            </div>
 
-          <div className="flex items-center justify-between">
-            <div className="text-xl">All Projects</div>
-            <button className="flex space-x-1 bg-gray-700 text-white px-5 py-4 rounded" onClick={showFormHandler}>
-              <DocumentPlusIcon className="w-4 h-4" />
-              <span className="inline-block text-xs">New Project</span>
-            </button>
-          </div>
+            <div className="flex items-center justify-between">
+              <div className="text-xl">All Projects</div>
+              <button className="flex space-x-1 bg-gray-700 text-white px-5 py-4 rounded" onClick={showFormHandler}>
+                <DocumentPlusIcon className="w-4 h-4" />
+                <span className="inline-block text-xs">New Project</span>
+              </button>
+            </div>
 
-          <div className="bg-white border p-5 rounded">
-            <DataTable
-              columns={columns}
-              data={data}
-              pagination
-              striped
-              responsive
-              pointerOnHover
-              highlightOnHover
-            />
+            <div className="bg-white border p-5 rounded">
+              <DataTable
+                columns={columns}
+                data={data}
+                pagination
+                striped
+                responsive
+                pointerOnHover
+                highlightOnHover
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </DashboardLayout>
+      </DashboardLayout>
+    </>
+
   );
 };
 

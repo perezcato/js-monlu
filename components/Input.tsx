@@ -1,29 +1,24 @@
-import React, { ChangeEvent } from "react";
-interface InputProps {
-  type: string;
-  name: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
-  placeholder: string;
-  label: string;
-  id: string;
-  className: string;
-}
+import React, {ChangeEvent, InputHTMLAttributes} from "react";
+// interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+//   label: string
+// }
+
+type InputProps = InputHTMLAttributes<HTMLInputElement> & { label: string}
 
 const Input = (props: Partial<InputProps>) => {
-    console.log(props.className)
+  const {label, className, ...inputProps} = props
   return (
     <>
       <label htmlFor={props.id}>{props.label}</label>
-      <input
-        type={props.type}
-        name={props.name}
-        value={props.value}
-        id={props.id}
-        className={props.className}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-      />
+      <div
+        className="mt-1 border rounded-md border-gray-300 overflow-hidden shadow-sm"
+      >
+        <input
+          {...inputProps}
+          className={`block w-full px-5 py-2 border-0 sm:text-sm ${props.className}`}
+        />
+      </div>
+
     </>
   );
 };

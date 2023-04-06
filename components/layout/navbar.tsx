@@ -113,7 +113,7 @@ const Navbar = (props: Props) => {
       {/*  </Dialog>*/}
       {/*</Transition.Root>*/}
 
-      <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-gray-900 shadow">
+      <div className="sticky top-0 flex h-16 flex-shrink-0 bg-gray-900 shadow">
         <div className="h-full flex items-center justify-center px-5">
           <h1 className="text-white">{props.pageName}</h1>
         </div>
