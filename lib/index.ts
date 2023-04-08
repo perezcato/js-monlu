@@ -5,7 +5,7 @@ import {
   UserPlusIcon,
   BanknotesIcon,
   ArrowPathIcon,
-  DocumentChartBarIcon
+  DocumentChartBarIcon,
 } from "@heroicons/react/24/outline";
 
 export function classNames(...classes: string[]) {
@@ -53,21 +53,21 @@ export const exploreMenu = [
   {
     name: "Create Accounts",
     icon: UserPlusIcon,
-    url: "/projects/explore",
+    url: "/projects/create-account",
   },
   {
     name: "Bank Accounts",
     icon: BanknotesIcon,
-    url: "/projects/explore",
+    url: "/projects/bank-account",
   },
   {
     name: "Reconcile Accounts",
     icon: ArrowPathIcon,
-    url: "/projects/explore",
+    url: "/projects/reconcile-accounts",
   },
   {
     name: "Reports",
     icon: DocumentChartBarIcon,
-    url: "/projects/explore",
+    url: "/projects/reports",
   },
 ];
