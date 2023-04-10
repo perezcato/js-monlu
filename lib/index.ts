@@ -1,6 +1,7 @@
 import {
   DocumentIcon,
   RectangleGroupIcon,
+  FolderOpenIcon,
   ChartBarIcon,
   UserPlusIcon,
   BanknotesIcon,
@@ -22,6 +23,7 @@ interface INavigationType {
 
 export const navigation: INavigationType[] = [
   { name: "Dashboard", icon: RectangleGroupIcon, href: "/", current: false },
+  { name: "Projects", icon: FolderOpenIcon, href: "/projects", current: false },
 ];
 
 export const projects = [
@@ -36,7 +38,7 @@ export const projects = [
 export const menuItems = [
   {
     name: "Projects",
-    icon: DocumentIcon,
+    icon: FolderOpenIcon,
     url: "/projects",
   },
 ];

@@ -1,26 +1,26 @@
-'use client'
+"use client";
 
-import React, {Fragment, useState} from 'react';
-import {Bars3BottomLeftIcon, BellIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {Dialog, Menu, Transition} from "@headlessui/react";
-import {classNames, navigation} from "@/lib";
-
+import React, { Fragment, useState } from "react";
+import {
+  Bars3BottomLeftIcon,
+  BellIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { Dialog, Menu, Transition } from "@headlessui/react";
+import { classNames, navigation } from "@/lib";
 
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+  { name: "Your Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Sign out", href: "#" },
+];
 
 interface Props {
-  pageName: string
+  pageName: string;
 }
 
-
-
 const Navbar = (props: Props) => {
-
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -115,12 +115,10 @@ const Navbar = (props: Props) => {
 
       <div className="sticky top-0 flex h-16 flex-shrink-0 bg-gray-900 shadow">
         <div className="h-full flex items-center justify-center px-5">
-          <h1 className="text-white">{props.pageName}</h1>
+          <h1 className="text-white font-bold">{props.pageName}</h1>
         </div>
-
       </div>
     </>
-
   );
 };
 
