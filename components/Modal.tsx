@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import Input from "@/components/Input";
+
 import Button from "@/components/Button";
+
 import { AnimatePresence, motion } from "framer-motion";
+
 import { useFormik } from "formik";
+
+import { XCircleIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   showModal: boolean;
@@ -59,6 +64,10 @@ const AddProject = (props: Props) => {
             onClick={(e) => e.stopPropagation()}
             className={`bg-white w-3/12 mx-auto  mt-20 p-10 border flex flex-col absolute rounded space-y-2`}
           >
+            <XCircleIcon
+              onClick={closeModel}
+              className="absolute inline-block w-8 h-8 text-gray-600 right-10 top-5 cursor-pointer"
+            />
             <form
               action="#"
               onSubmit={formik.handleSubmit}
