@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { AnimatePresence, motion } from "framer-motion";
+import { useFormik } from "formik";
 
 interface Props {
   showModal: boolean;
@@ -10,6 +11,17 @@ interface Props {
 
 const AddProject = (props: Props) => {
   const closeModel = () => props.setShowModal(false);
+  const formik = useFormik({
+    initialValues: {
+      projectName: "",
+      from: "",
+      to: "",
+      bill: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
     <AnimatePresence>
@@ -44,20 +56,53 @@ const AddProject = (props: Props) => {
             initial="hidden"
             animate="show"
             exit="hidden"
+            onClick={(e) => e.stopPropagation()}
             className={`bg-white w-3/12 mx-auto  mt-20 p-10 border flex flex-col absolute rounded space-y-2`}
           >
-            <Input label="Project Name" />
-            <Input label="from" />
-            <Input label="to" />
-            <label htmlFor="bill">Bill Maturity</label>
-            <select id="bill" className="border border-black py-1 rounded">
-              <option disabled>choose</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            <form
+              action="#"
+              onSubmit={formik.handleSubmit}
+              className="flex flex-col gap-1"
+            >
+              <Input
+                label="Project Name"
+                name="projectName"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.projectName}
+              />
+              <Input
+                label="from"
+                name="from"
+                type="date"
+                onChange={formik.handleChange}
+                value={formik.values.from}
+              />
+              <Input
+                label="to"
+                name="to"
+                type="date"
+                onChange={formik.handleChange}
+                value={formik.values.to}
+              />
+              <label htmlFor="bill" className="mt-1">
+                Bill Maturity
+              </label>
+              <select
+                id="bill"
+                className="border border-black py-1 rounded inline-block"
+                name="bill"
+                onChange={formik.handleChange}
+                value={formik.values.bill}
+              >
+                <option disabled>choose</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </form>
           </motion.div>
         </motion.div>
       )}

@@ -29,7 +29,7 @@ const Projects = () => {
           </div>
           <div className="col-span-10 p-5 py-8 space-y-5">
             <div className="space-x-2 text-sm font-semibold text-gray-700">
-              <Link href="/">
+              <Link href="/projects">
                 <span className="inline-block">Projects</span>
               </Link>
               <span>{"/"}</span>
