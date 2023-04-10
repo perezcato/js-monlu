@@ -41,11 +41,13 @@ const Projects = () => {
             <div className="flex items-center justify-between">
               <div className="text-xl">All Projects</div>
               <button
-                className="flex space-x-1 bg-gray-700 text-white px-5 py-4 rounded"
+                className="flex items-center space-x-1 bg-gray-700 text-white px-5 py-4 rounded"
                 onClick={showFormHandler}
               >
                 <DocumentPlusIcon className="w-4 h-4" />
-                <span className="inline-block text-xs">New Project</span>
+                <span className="inline-block text-sm font-bold">
+                  New Project
+                </span>
               </button>
             </div>
 
