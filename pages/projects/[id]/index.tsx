@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DashboardLayout from "@/components/layout";
-import { exploreMenu, projectsMenu } from "@/lib";
+import { exploreMenu } from "@/lib";
 
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import AddProject from "@/components/Modal";
