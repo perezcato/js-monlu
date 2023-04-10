@@ -5,6 +5,7 @@ import { exploreMenu } from "@/lib";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import AddProject from "@/components/Modal";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Projects = () => {
   const [showAddProject, setShowAddProject] = useState<boolean>(false);
@@ -28,7 +29,9 @@ const Projects = () => {
           </div>
           <div className="col-span-10 p-5 py-8 space-y-5">
             <div className="space-x-2 text-sm font-semibold text-gray-700">
-              <span className="inline-block">Projects</span>
+              <Link href="/">
+                <span className="inline-block">Projects</span>
+              </Link>
               <span>{"/"}</span>
               <span className="inline-block">{id}</span>
             </div>
