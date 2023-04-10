@@ -1,5 +1,4 @@
 import {
-  DocumentIcon,
   RectangleGroupIcon,
   FolderOpenIcon,
   ChartBarIcon,
