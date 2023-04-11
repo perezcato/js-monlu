@@ -24,7 +24,7 @@ const Projects = () => {
 
   const showFormHandler = () => setShowAddProject(true);
   const selectProject = async (projectName: string) =>
-    router.push(`/projects/${projectName}`);
+    router.push(`/projects/${projectName}/bank-accounts`);
 
   return (
     <>

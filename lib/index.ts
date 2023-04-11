@@ -52,14 +52,14 @@ export const projectsMenu = [
 
 export const exploreMenu = [
   {
-    name: "Create Accounts",
-    icon: UserPlusIcon,
-    url: "create-account",
-  },
-  {
     name: "Bank Accounts",
     icon: BanknotesIcon,
     url: "bank-accounts",
+  },
+  {
+    name: "Create Accounts",
+    icon: UserPlusIcon,
+    url: "create-account",
   },
   {
     name: "Reconcile Accounts",
