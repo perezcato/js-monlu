@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "@/components/Input";
-
-import Button from "@/components/Button";
 
 import { AnimatePresence, motion } from "framer-motion";
 

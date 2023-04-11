@@ -13,17 +13,15 @@ const DashboardSideItems = (props: DashboardSideItemsProps) => {
   const path: string[] = props.url.split("/");
 
   return (
-    <>
-      <Link
-        href={props.url}
-        className={` ${
-          router.query.id === path[2] ? "bg-gray-300" : ""
-        } px-5 py-3 flex items-center space-x-3 cursor-pointer hover:bg-gray-300  rounded`}
-      >
-        <props.icon className={"w-5 h-5 inline-block"} />
-        <div className="font-semibold text-gray-700">{props.name}</div>
-      </Link>
-    </>
+    <Link
+      href={props.url}
+      className={`${
+        router.pathname.includes(path[3]) ? "bg-gray-300" : ""
+      } px-5 py-4 flex items-center space-x-3 cursor-pointer hover:bg-gray-300  rounded`}
+    >
+      <props.icon className={"w-4 h-4 inline-block"} />
+      <div className="text-gray-600 text-sm font-bold">{props.name}</div>
+    </Link>
   );
 };
 
