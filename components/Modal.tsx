@@ -60,7 +60,7 @@ const AddProject = (props: Props) => {
             animate="show"
             exit="hidden"
             onClick={(e) => e.stopPropagation()}
-            className={`bg-white w-3/12 mx-auto  mt-20 p-10 border flex flex-col absolute rounded space-y-2`}
+            className={`relative h-fit bg-white w-3/12 mx-auto  mt-20 p-10 border flex flex-col absolute rounded `}
           >
             <XCircleIcon
               onClick={closeModel}
@@ -69,7 +69,7 @@ const AddProject = (props: Props) => {
             <form
               action="#"
               onSubmit={formik.handleSubmit}
-              className="flex flex-col gap-1"
+              className="flex flex-col gap-1 space-y-2"
             >
               <Input
                 label="Project Name"
@@ -79,36 +79,34 @@ const AddProject = (props: Props) => {
                 value={formik.values.projectName}
               />
               <Input
-                label="from"
+                label="Billing Maturity From"
                 name="from"
                 type="date"
                 onChange={formik.handleChange}
                 value={formik.values.from}
               />
               <Input
-                label="to"
+                label="Billing Maturity To"
                 name="to"
                 type="date"
                 onChange={formik.handleChange}
                 value={formik.values.to}
               />
-              <label htmlFor="bill" className="mt-1">
-                Bill Maturity
-              </label>
-              <select
-                id="bill"
-                className="border border-black py-1 rounded inline-block"
-                name="bill"
-                onChange={formik.handleChange}
-                value={formik.values.bill}
-              >
-                <option disabled>choose</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <div>
+                <label htmlFor="bill" className="text-sm font-semibold">
+                  Bill Maturity
+                </label>
+                <div className="mt-1 border rounded-md border-gray-300 overflow-hidden shadow-sm px-5 py-3 ">
+                  <select id="bill" className="w-full outline-none">
+                    <option disabled>choose</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
             </form>
           </motion.div>
         </motion.div>
