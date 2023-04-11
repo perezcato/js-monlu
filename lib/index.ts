@@ -54,21 +54,21 @@ export const exploreMenu = [
   {
     name: "Create Accounts",
     icon: UserPlusIcon,
-    url: "/projects/create-account",
+    url: "create-account",
   },
   {
     name: "Bank Accounts",
     icon: BanknotesIcon,
-    url: "/projects/bank-account",
+    url: "bank-accounts",
   },
   {
     name: "Reconcile Accounts",
     icon: ArrowPathIcon,
-    url: "/projects/reconcile-accounts",
+    url: "reconcile-accounts",
   },
   {
     name: "Reports",
     icon: DocumentChartBarIcon,
-    url: "/projects/reports",
+    url: "reports",
   },
 ];

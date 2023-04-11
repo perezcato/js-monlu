@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google";
 import DashboardLayout from "@/components/layout";
+import { useRouter } from "next/router";
 import { exploreMenu } from "@/lib";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import Link from "next/link";
 import React from "react";
-import { useRouter } from "next/router";
 
-export default function BankAccounts() {
+export default function Reports() {
   const router = useRouter();
   const { id } = router.query;
 

@@ -5,6 +5,7 @@ import { exploreMenu } from "@/lib";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import AddProject from "@/components/Modal";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Projects = () => {
   const [showAddProject, setShowAddProject] = useState<boolean>(false);
@@ -15,20 +16,22 @@ const Projects = () => {
   return (
     <>
       <AddProject showModal={showAddProject} setShowModal={setShowAddProject} />
-      <DashboardLayout page={`Projects- ${id}`}>
+      <DashboardLayout page={`Projects - ${id}`}>
         <div className="grid grid-cols-12 flex h-full ">
           <div className="bg-white py-4 border px-3 col-span-2 flex flex-col gap-2.5">
             {exploreMenu.map((menu) => (
               <DashboardSideItems
-                url={menu.url}
+                url={`${id}/${menu.url}`}
                 name={menu.name}
                 icon={menu.icon}
               />
             ))}
           </div>
           <div className="col-span-10 p-5 py-8 space-y-5">
-            <div className="space-x-2 text-sm font-semibold text-gray-700">
-              <span className="inline-block">Projects</span>
+            <div className="space-x-2 text-xs font-semibold text-gray-700">
+              <Link href="/projects">
+                <span className="inline-block underline">Projects</span>
+              </Link>
               <span>{"/"}</span>
               <span className="inline-block">{id}</span>
             </div>
