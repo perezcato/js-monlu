@@ -34,7 +34,7 @@ export default function Reports() {
                 <span className="inline-block underline">{id}</span>
               </Link>
               <span>{"/"}</span>
-              <span className="inline-block">Create Account</span>
+              <span className="inline-block">Reports</span>
             </div>
           </div>
         </div>

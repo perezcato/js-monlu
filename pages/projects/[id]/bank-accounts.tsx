@@ -2,12 +2,25 @@ import DashboardLayout from "@/components/layout";
 import { exploreMenu } from "@/lib";
 import DashboardSideItems from "@/components/dashboard/DashboardSideItems";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 
-const projects = [
+type ProjectsType = {
+  id: number;
+  name: string;
+  number: string;
+  bank: string;
+  transactions: string;
+  credits: string;
+  debit: string;
+  balance: string;
+  checked: boolean;
+}[];
+
+const projects: ProjectsType = [
   {
+    id: 5,
     name: "Account 2",
     number: "1015223213045",
     bank: "Fidelity Bank",
@@ -15,8 +28,10 @@ const projects = [
     credits: "3,232,212",
     debit: "3,232,212",
     balance: "3,232,212",
+    checked: false,
   },
   {
+    id: 4,
     name: "Account 3",
     number: "1015223213045",
     bank: "Fidelity Bank",
@@ -24,8 +39,10 @@ const projects = [
     credits: "3,232,212",
     debit: "3,232,212",
     balance: "3,232,212",
+    checked: false,
   },
   {
+    id: 3,
     name: "Account 4",
     number: "1015223213045",
     bank: "Fidelity Bank",
@@ -33,8 +50,10 @@ const projects = [
     credits: "3,232,212",
     debit: "3,232,212",
     balance: "3,232,212",
+    checked: false,
   },
   {
+    id: 2,
     name: "Account 5",
     number: "1015223213045",
     bank: "Fidelity Bank",
@@ -42,8 +61,10 @@ const projects = [
     credits: "3,232,212",
     debit: "3,232,212",
     balance: "3,232,212",
+    checked: false,
   },
   {
+    id: 1,
     name: "Account 6",
     number: "1015223213045",
     bank: "Fidelity Bank",
@@ -51,15 +72,37 @@ const projects = [
     credits: "3,232,212",
     debit: "3,232,212",
     balance: "3,232,212",
+    checked: false,
   },
 ];
 
 export default function BankAccounts() {
   const router = useRouter();
   const { id } = router.query;
+  const path = router.pathname;
 
   const selectProject = async (projectName: string) =>
     router.push(`/projects/${projectName}/bank-accounts`);
+
+  const [checked, setChecked] = useState([]);
+
+  const [rows, setRows] = useState(projects);
+  const handleSelectAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    const updatedRows = rows.map((row) => ({ ...row, checked }));
+    setRows(updatedRows);
+  };
+
+  const handleSelectRow = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    id: number
+  ) => {
+    const { checked } = event.target;
+    const updatedRows = rows.map((row) =>
+      row.id === id ? { ...row, checked } : row
+    );
+    setRows(updatedRows);
+  };
 
   return (
     <>
@@ -85,7 +128,7 @@ export default function BankAccounts() {
                 <span className="inline-block underline">{id}</span>
               </Link>
               <span>{"/"}</span>
-              <span className="inline-block">Create Account</span>
+              <span className="inline-block">Bank Account</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -105,7 +148,7 @@ export default function BankAccounts() {
                             scope="col"
                             className="py-3.5 pl-4 pr-4 text-left text-sm font-semibold text-gray-900 sm:pl-0 flex justify-center"
                           >
-                            <input type="checkbox" />
+                            <input type="checkbox" onChange={handleSelectAll} />
                           </th>
                           <th
                             scope="col"
@@ -152,13 +195,19 @@ export default function BankAccounts() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-200 bg-white">
-                        {projects.map((project, index) => (
+                        {rows.map((project, index) => (
                           <tr
                             key={index}
                             className="divide-x divide-gray-200 cursor-pointer hover:bg-gray-100"
                           >
                             <td className="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-0 flex justify-center">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                checked={project.checked}
+                                onChange={(event) =>
+                                  handleSelectRow(event, project.id)
+                                }
+                              />
                             </td>
                             <td
                               onClick={() => selectProject(project.name)}
