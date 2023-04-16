@@ -1,4 +1,5 @@
 import React from "react";
+import profilePic from "../../utility/assests/pic1.jpg";
 import {
   BsBell,
   BsXDiamond,
@@ -6,10 +7,11 @@ import {
   BsSearch,
   BsXLg,
 } from "react-icons/bs";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="h-[5rem] bg-white flex sticky top-0 items-center justify-between ">
+    <div className="h-[5rem] bg-white flex sticky top-0 items-center justify-between border-b border-gray-100">
       <div className="flex items-center hover:bg-[#F6F7FA] w-[336px] h-[40px] rounded-lg ml-4 p-2 text-[#8c98a4]">
         <BsSearch />
         <input
@@ -29,8 +31,17 @@ const Navbar = () => {
         <li className="w-[42px] h-[42px] hover:bg-[#eee]  flex items-center justify-center rounded-full ">
           <BsXDiamond />
         </li>
-        <li>
-          <span>Logo</span>
+        <li className="relative">
+          <div className="w-[2.4rem] h-[2.4rem] relative rounded-full ">
+            <Image
+              src={profilePic}
+              alt="Profile Picture"
+              fill
+              objectFit="cover"
+              className="rounded-full -z-10"
+            />
+            <div className=" w-[13px] h-[13px] bg-green-500 z-10] rounded-full absolute  right-0 top-6"></div>
+          </div>
         </li>
       </ul>
     </div>

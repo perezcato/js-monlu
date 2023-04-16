@@ -7,7 +7,7 @@ type DashboardProps = {
 };
 const Dashboard = (props: DashboardProps) => {
   return (
-    <div className="flex">
+    <div className="bg-white flex">
       <Sidenav />
       <div className="flex-1">
         <Navbar />
