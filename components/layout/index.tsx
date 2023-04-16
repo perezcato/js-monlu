@@ -12,7 +12,7 @@ const Dashboard = (props: DashboardProps) => {
       <Sidenav />
       <div className="flex-1">
         <Navbar />
-        <div className="p-4 space-y-8">
+        <div className="px-4 space-y-8">
           <div className="py-6 border-b border-gray-100">
             <div className="font-bold text-gray-800 text-xl">{props.page}</div>
           </div>
