@@ -12,8 +12,6 @@ type sideData = {
   title: string;
   path: string;
   icon: any;
-  iconDown: any;
-  iconUp: any;
   label?: string;
   subNav: { title: string; path: string; icon: any }[];
 }[];
@@ -23,8 +21,6 @@ export const sidebarData: sideData = [
     title: "Project",
     path: "/projects",
     icon: BsPerson,
-    iconDown: BsChevronDown,
-    iconUp: BsChevronUp,
     label: "Pages",
     subNav: [
       {
@@ -38,8 +34,6 @@ export const sidebarData: sideData = [
     title: "Accounts",
     path: "/accounts",
     icon: BsPersonBadge,
-    iconDown: BsChevronDown,
-    iconUp: BsChevronUp,
     subNav: [
       {
         title: "Overview",
@@ -57,9 +51,6 @@ export const sidebarData: sideData = [
     title: "Structure",
     path: "/structure",
     icon: BsMenuUp,
-    iconDown: BsChevronDown,
-    iconUp: BsChevronUp,
-
     subNav: [
       {
         title: "Overview",
@@ -80,8 +71,6 @@ export const ActiveProjects: sideData = [
     title: "GWCL",
     path: "/projects",
     icon: BsStickies,
-    iconDown: BsChevronDown,
-    iconUp: BsChevronUp,
     label: "Active Projects",
     subNav: [
       {

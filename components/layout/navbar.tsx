@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="h-[5rem] bg-white flex sticky top-0 items-center justify-between ">
+    <div className="h-[5rem] bg-white flex sticky top-0 items-center justify-between border-b border-gray-100">
       <div className="flex items-center hover:bg-[#F6F7FA] w-[336px] h-[40px] rounded-lg ml-4 p-2 text-[#8c98a4]">
         <BsSearch />
         <input
