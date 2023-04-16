@@ -25,7 +25,7 @@ export const sidebarData: sideData = [
     subNav: [
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/projects",
         icon: BsPerson,
       },
     ],
