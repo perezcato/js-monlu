@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-// import './CurvePlot.css';
+import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
 
 const CurvePlot = () => {
   const data = [
@@ -30,7 +21,7 @@ const CurvePlot = () => {
 
           <Tooltip />
           {/* <CartesianGrid stroke="#f5f5f5" /> */}
-          <Line type="monotone" dataKey="y" stroke="#00FF00" yAxisId={0} />
+          <Line type="monotone" dataKey="y" stroke="#377dff" yAxisId={0} />
         </LineChart>
       </ResponsiveContainer>
     </div>
