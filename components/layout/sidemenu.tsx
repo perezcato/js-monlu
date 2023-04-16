@@ -15,7 +15,7 @@ const Sidemenu = (props: any) => {
         onClick={item.subNav && showNav}
       >
         <div className="flex items-center w-full space-x-4">
-          <item.icon />
+          <item.icon className="text-gray-600" />
           <p className="text-sm">{item.title}</p>
         </div>
         <div className="">
