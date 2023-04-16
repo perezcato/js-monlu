@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
 
 const projects = [
   {
@@ -43,8 +44,29 @@ const projects = [
 
 export default function TableComponent() {
   return (
-    <div className="w-full bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100">
-      <div className="mt-8 flow-root">
+    <div className="w-full bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden">
+      <div className="px-5 py-4 flex items-center justify-between">
+        <div className="text-sm font-normal text-[#677788] flex items-center space-x-5 border-b border-gray-100 py-2">
+          <BsSearch />
+          <input
+            type="text"
+            placeholder="Search Projects"
+            className="outline-none"
+          />
+        </div>
+        <div className="flex items-center space-x-3">
+          <button className="border border-gray-100 rounded-md px-4 py-2 flex items-center space-x-2 text-[#677788]">
+            <BsDownload className="text-xs" />
+            <span className="text-xs font-normal ">Export</span>
+            <BsChevronDown className="text-xs" />
+          </button>
+          <button className="border border-gray-100 rounded-md px-4 py-2 flex items-center space-x-2 text-[#677788]">
+            <BsFilter className="text-xs" />
+            <span className="text-xs font-normal ">Filter</span>
+          </button>
+        </div>
+      </div>
+      <div className="flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <div className="overflow-hidden">
