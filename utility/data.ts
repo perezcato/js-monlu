@@ -1,5 +1,12 @@
 import React, { SVGProps } from "react";
-import { BsPerson, BsChevronUp, BsChevronDown } from "react-icons/bs";
+import {
+  BsPerson,
+  BsChevronUp,
+  BsChevronDown,
+  BsPersonBadge,
+  BsMenuUp,
+  BsStickies,
+} from "react-icons/bs";
 
 type sideData = {
   title: string;
@@ -7,23 +14,107 @@ type sideData = {
   icon: any;
   iconDown: any;
   iconUp: any;
+  label?: string;
   subNav: { title: string; path: string; icon: any }[];
 }[];
 
 export const sidebarData: sideData = [
   {
-    title: "user",
-    path: "/user",
+    title: "Project",
+    path: "/projects",
     icon: BsPerson,
+    iconDown: BsChevronDown,
+    iconUp: BsChevronUp,
+    label: "Pages",
+    subNav: [
+      {
+        title: "Dashboard",
+        path: "/dashboard",
+        icon: BsPerson,
+      },
+    ],
+  },
+  {
+    title: "Accounts",
+    path: "/accounts",
+    icon: BsPersonBadge,
     iconDown: BsChevronDown,
     iconUp: BsChevronUp,
     subNav: [
       {
-        title: "user1",
-        path: "/user/1",
+        title: "Overview",
+        path: "/overview",
         icon: BsPerson,
       },
-      { title: "user2", path: "/user/2", icon: BsPerson },
+      {
+        title: "Settings",
+        path: "/settings",
+        icon: BsPerson,
+      },
     ],
+  },
+  {
+    title: "Structure",
+    path: "/structure",
+    icon: BsMenuUp,
+    iconDown: BsChevronDown,
+    iconUp: BsChevronUp,
+
+    subNav: [
+      {
+        title: "Overview",
+        path: "/overview",
+        icon: BsPerson,
+      },
+      {
+        title: "Settings",
+        path: "/settings",
+        icon: BsPerson,
+      },
+    ],
+  },
+];
+
+export const ActiveProjects: sideData = [
+  {
+    title: "GWCL",
+    path: "/projects",
+    icon: BsStickies,
+    iconDown: BsChevronDown,
+    iconUp: BsChevronUp,
+    label: "Active Projects",
+    subNav: [
+      {
+        title: "Overview",
+        path: "/overview",
+        icon: BsPerson,
+      },
+      {
+        title: "Activity",
+        path: "/activity",
+        icon: BsPerson,
+      },
+      {
+        title: "Teams",
+        path: "/teams",
+        icon: BsPerson,
+      },
+      {
+        title: "Settings",
+        path: "/settings",
+        icon: BsPerson,
+      },
+    ],
+  },
+];
+
+export const App: any = [
+  {
+    title: "API Keys",
+    path: "/api-keys",
+    icon: BsPerson,
+    iconDown: BsChevronDown,
+    iconUp: BsChevronUp,
+    label: "Apps",
   },
 ];
