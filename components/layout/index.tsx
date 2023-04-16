@@ -7,9 +7,9 @@ type DashboardProps = {
 };
 const Dashboard = (props: DashboardProps) => {
   return (
-    <div className="bg-sky-800 flex">
+    <div className="flex">
       <Sidenav />
-      <div className="bg-amber-300 flex-1">
+      <div className="flex-1">
         <Navbar />
         <div>{props.children}</div>
       </div>
