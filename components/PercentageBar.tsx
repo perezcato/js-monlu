@@ -6,15 +6,9 @@ interface Type {
 
 const PercentageBar = ({ percentage }: Type) => {
   return (
-    <div className="h-4 w-full bg-gray-300 rounded-full">
-      <div
-        className="h-full bg-green-500 rounded-full"
-        style={{ width: `${percentage}%` }}
-      >
-        <div className="flex justify-end h-full w-full text-xs text-gray-700 px-2">
-          <div>{percentage}%</div>
-        </div>
-      </div>
+    <div className="w-full bg-gray-300 rounded-full overflow-hidden flex items-center">
+      <div className="h-[8px] bg-[#377dff] w-[38%]" />
+      <div className="h-[8px] bg-[#00c987] w-[62%]"></div>
     </div>
   );
 };
