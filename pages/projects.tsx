@@ -1,13 +1,21 @@
 import Dashboard from "@/components/layout";
 import PercentageBar from "@/components/PercentageBar";
-import { BsGraphUp } from "react-icons/bs";
+import { BsGraphUp, BsPlus } from "react-icons/bs";
 // TableWithImages.js
 import React from "react";
 import TableComponent from "@/components/cards/TableComponent";
 
 const TableWithImages = () => {
   return (
-    <Dashboard page="Overview">
+    <Dashboard
+      buttons={
+        <button className="bg-blue-500 text-white rounded-md flex items-center text-sm py-2 px-4 space-x-2">
+          <BsPlus className="stroke-current" />
+          <span className="inline-block">New Project</span>
+        </button>
+      }
+      page="Overview"
+    >
       <div className="w-full flex items-center bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden py-5 px-8">
         <div className="flex items-center space-x-5 w-1/5">
           <h1 className="text-6xl font-bold">12</h1>
