@@ -1,26 +1,20 @@
-import React from 'react';
-import Sidenav from "@/components/layout/sidenav";
+import React from "react";
 import Navbar from "@/components/layout/navbar";
+import Sidenav from "@/components/layout/sidenav";
 
-
-interface Props {
-  children: React.ReactNode | React.ReactNode[]
-  page: string
-}
-
-
-const DashboardLayout = (props: Props) => {
+type DashboardProps = {
+  children: React.ReactNode;
+};
+const Dashboard = (props: DashboardProps) => {
   return (
-    <div className="flex bg-gray-50">
+    <div className="flex">
       <Sidenav />
-      <div className="flex-1 flex flex-col min-h-screen">
-        <Navbar pageName={props.page} />
-        <div className="flex-1">
-          {props.children}
-        </div>
+      <div className="flex-1">
+        <Navbar />
+        <div>{props.children}</div>
       </div>
     </div>
   );
 };
 
-export default DashboardLayout;
+export default Dashboard;
