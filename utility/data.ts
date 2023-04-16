@@ -1,11 +1,11 @@
-import React, { SVGProps } from "react";
 import {
   BsPerson,
   BsChevronUp,
   BsChevronDown,
-  BsPersonBadge,
   BsMenuUp,
   BsStickies,
+  BsPersonLinesFill,
+  BsFolder2Open,
 } from "react-icons/bs";
 
 type sideData = {
@@ -20,7 +20,7 @@ export const sidebarData: sideData = [
   {
     title: "Project",
     path: "/projects",
-    icon: BsPerson,
+    icon: BsFolder2Open,
     label: "Pages",
     subNav: [
       {
@@ -33,7 +33,7 @@ export const sidebarData: sideData = [
   {
     title: "Accounts",
     path: "/accounts",
-    icon: BsPersonBadge,
+    icon: BsPersonLinesFill,
     subNav: [
       {
         title: "Overview",
