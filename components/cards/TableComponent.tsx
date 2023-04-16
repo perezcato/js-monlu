@@ -139,7 +139,7 @@ export default function TableComponent() {
                         <div className="inline-flex items-center">
                           {project.members.map((member, key) => (
                             <div
-                              className={`relative w-[24px] h-[24px] overflow-hidden rounded-full ${
+                              className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
                                 key !== 0 ? "-ml-[10px]" : ""
                               }`}
                             >
