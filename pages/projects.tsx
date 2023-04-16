@@ -7,7 +7,7 @@ import TableComponent from "@/components/cards/TableComponent";
 
 const TableWithImages = () => {
   return (
-    <Dashboard>
+    <Dashboard page="Overview">
       <div className="rounded p-6 shadow flex bg-white h-auto overflow-hidden m-2 justify-between items-center">
         <div className="flex">
           <h1 className="text-3xl font-bold px-8">12</h1>
