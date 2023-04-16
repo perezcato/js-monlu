@@ -1,5 +1,5 @@
 import React from "react";
-import profilePic from "../../utility/assests/pic1.jpg";
+
 import {
   BsBell,
   BsXDiamond,
@@ -34,7 +34,7 @@ const Navbar = () => {
         <li className="relative">
           <div className="w-[2.4rem] h-[2.4rem] relative rounded-full ">
             <Image
-              src={profilePic}
+              src={"/assets/images/pic1.jpg"}
               alt="Profile Picture"
               fill
               objectFit="cover"
