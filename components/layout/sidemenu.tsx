@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 import { BsChevronUp } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
+
 const Sidemenu = (props: any) => {
   const item = props.item;
   const [dropDown, setDropDown] = useState<boolean>(false);
@@ -27,22 +29,42 @@ const Sidemenu = (props: any) => {
         </div>
       </Link>
 
-      <div className="border-l ml-6 px-2">
-        {dropDown &&
-          item.subNav.map((items, key) => {
-            return (
-              <Link
-                href=""
-                key={key}
-                className="inline-block text-sm hover:bg-[#eee] py-2 px-4 rounded-lg w-full mb-1"
-              >
-                {items.title}
-              </Link>
-            );
-          })}
-      </div>
+      <AnimatePresence>
+        {dropDown && (
+          <motion.div
+            variants={variants}
+            initial={"hide"}
+            animate={"show"}
+            exit={"hide"}
+            className="border-l ml-6 px-2"
+          >
+            {item.subNav.map((items, key) => {
+              return (
+                <Link
+                  href=""
+                  key={key}
+                  className="inline-block text-sm hover:bg-[#eee] py-2 px-4 rounded-lg w-full mb-1"
+                >
+                  {items.title}
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
+};
+
+const variants = {
+  hide: {
+    height: 0,
+    opacity: 0,
+  },
+  show: {
+    height: "auto",
+    opacity: 1,
+  },
 };
 
 export default Sidemenu;

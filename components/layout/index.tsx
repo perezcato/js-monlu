@@ -5,6 +5,8 @@ import Sidenav from "@/components/layout/sidenav";
 type DashboardProps = {
   children: React.ReactNode;
   page: string;
+
+  buttons?: React.ReactNode | React.ReactNode[];
 };
 const Dashboard = (props: DashboardProps) => {
   return (
@@ -12,9 +14,10 @@ const Dashboard = (props: DashboardProps) => {
       <Sidenav />
       <div className="flex-1">
         <Navbar />
-        <div className="p-4 space-y-8">
-          <div className="py-6 border-b border-gray-100">
+        <div className="px-4 space-y-8">
+          <div className="py-6 border-b border-gray-100 flex items-center justify-between">
             <div className="font-bold text-gray-800 text-xl">{props.page}</div>
+            <div>{props.buttons && props.buttons}</div>
           </div>
           {props.children}
         </div>
