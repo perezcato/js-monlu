@@ -138,6 +138,7 @@ export default function TableComponent() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm">
                         <div className="inline-flex items-center">
                           {project.members.map((member, key) => (
+                            // eslint-disable-next-line react/jsx-key
                             <div
                               className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
                                 key !== 0 ? "-ml-[10px]" : ""
@@ -175,3 +176,4 @@ export default function TableComponent() {
     </div>
   );
 }
+
