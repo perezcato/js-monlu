@@ -3,29 +3,19 @@ import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
 
 const projects = [
   {
+    id: 1,
     name: "GWCL",
     status: "Active",
     members: [
-      {
-        name: "John Doe",
-        image: "/assets/images/img4.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img5.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img6.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img7.jpg",
-      },
+      { name: "John Doe", image: "/assets/images/img4.jpg" },
+      { name: "John Doe", image: "/assets/images/img5.jpg" },
+      { name: "John Doe", image: "/assets/images/img6.jpg" },
+      { name: "John Doe", image: "/assets/images/img7.jpg" },
     ],
     image: "/assets/images/capsule-icon.svg",
   },
   {
+    id: 2,
     name: "GRA RECONCILIATION 1",
     status: "Active",
     members: [
@@ -106,13 +96,13 @@ export default function TableComponent() {
                   </tr>
                 </thead>
                 <tbody className="bg-white text-[#677788]">
-                  {projects.map((project, key) => (
-                    <tr key={key}>
+                  {projects.map((project) => (
+                    <tr key={project.id}>
                       <td className="whitespace-nowrap py-3 pl-5 pr-3 text-xs font-medium">
                         <input type="checkbox" />
                       </td>
                       <td className="whitespace-nowrap px-3 py-3 text-xs">
-                        {key + 1}
+                        {project.id + 1}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3 text-sm flex items-center space-x-3">
                         <div className="relative w-[42px] h-[42px] overflow-hidden rounded-full">
@@ -176,4 +166,3 @@ export default function TableComponent() {
     </div>
   );
 }
-

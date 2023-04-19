@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { BsChevronUp } from "react-icons/bs";
 import { AnimatePresence, motion } from "framer-motion";
+import { UrlObject } from "url";
 
 const Sidemenu = (props: any) => {
   const item = props.item;
@@ -38,7 +39,7 @@ const Sidemenu = (props: any) => {
             exit={"hide"}
             className="border-l ml-6 px-2"
           >
-            {item.subNav.map((items, key) => {
+            {item.subNav.map((items: { path: string | UrlObject; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }, key: React.Key | null | undefined) => {
               return (
                 <Link
                   href={items.path}
