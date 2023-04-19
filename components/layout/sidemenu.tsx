@@ -41,7 +41,7 @@ const Sidemenu = (props: any) => {
             {item.subNav.map((items, key) => {
               return (
                 <Link
-                  href=""
+                  href={items.path}
                   key={key}
                   className="inline-block text-sm hover:bg-[#eee] py-2 px-4 rounded-lg w-full mb-1"
                 >

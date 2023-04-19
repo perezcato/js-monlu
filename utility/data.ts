@@ -25,7 +25,7 @@ export const sidebarData: sideData = [
     subNav: [
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/",
         icon: BsPerson,
       },
     ],
@@ -37,29 +37,29 @@ export const sidebarData: sideData = [
     subNav: [
       {
         title: "Overview",
-        path: "/overview",
+        path: "/accounts",
         icon: BsPerson,
       },
       {
         title: "Settings",
-        path: "/settings",
+        path: "/accounts",
         icon: BsPerson,
       },
     ],
   },
   {
     title: "Structure",
-    path: "/structure",
+    path: "/accounts",
     icon: BsMenuUp,
     subNav: [
       {
         title: "Overview",
-        path: "/overview",
+        path: "/accounts",
         icon: BsPerson,
       },
       {
         title: "Settings",
-        path: "/settings",
+        path: "/accounts",
         icon: BsPerson,
       },
     ],
@@ -75,22 +75,22 @@ export const ActiveProjects: sideData = [
     subNav: [
       {
         title: "Overview",
-        path: "/overview",
+        path: "/accounts",
         icon: BsPerson,
       },
       {
         title: "Activity",
-        path: "/activity",
+        path: "/accounts",
         icon: BsPerson,
       },
       {
         title: "Teams",
-        path: "/teams",
+        path: "/accounts",
         icon: BsPerson,
       },
       {
         title: "Settings",
-        path: "/settings",
+        path: "/accounts",
         icon: BsPerson,
       },
     ],

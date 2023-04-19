@@ -1,15 +1,17 @@
 import { BsGraphUp } from "react-icons/bs";
 import FinanceChart from "./FinancialGraph";
+import Link from "next/link";
 
 interface CardProps {
   title: string;
   value: string;
   percentage: number;
+  links: string
 }
 
-const Card = ({ title, value, percentage }: CardProps) => {
+const Card = ({ title, value, percentage, links }: CardProps) => {
   return (
-    <div className="bg-white overflow-hidden border border-gray-100 shadow shadow-slate-100 cursor-pointer rounded-lg px-4 py-4 hover:shadow-lg hover:shadow-slate-100 transition-shadow duration-300">
+    <Link className="bg-white overflow-hidden border border-gray-100 shadow shadow-slate-100 cursor-pointer rounded-lg px-4 py-4 hover:shadow-lg hover:shadow-slate-100 transition-shadow duration-300" href={links}>
       <div className="flex w-full">
         <div className="flex flex-col w-6/12 space-y-3">
           <h3 className="text-xs font-medium text-gray-400 uppercase">
@@ -33,16 +35,16 @@ const Card = ({ title, value, percentage }: CardProps) => {
           <FinanceChart />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 const CardContainer = () => {
   return (
     <div className="grid grid-cols-4 gap-x-6">
-      <Card title="Projects" value="5000" percentage={100} />
-      <Card title="Accounts" value="2500" percentage={50} />
-      <Card title="structures" value="50%" percentage={50} />
+      <Card title="Projects" links= '/projects' value="5000" percentage={100} />
+      <Card title="Accounts" links= '/accounts' value="2500" percentage={50} />
+      <Card title="structures" links= '/' value="50%" percentage={50} />
     </div>
   );
 };

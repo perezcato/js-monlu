@@ -25,7 +25,7 @@ const Sidenav = () => {
       <div className="px-5 py-6 text-[#132144]">
         <div className="flex items-center  hover:bg-[#eee] rounded-lg space-x-4 px-4 py-2">
           <BsHouseDoor />
-          <Link href="/dashboard" className=" text-sm">
+          <Link href="/" className=" text-sm">
             Dashboard
           </Link>
         </div>
