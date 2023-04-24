@@ -12,30 +12,20 @@ type projectProps = {
 
 const projects: projectProps = [
   {
+    id: 1,
     name: "GWCL",
     status: "Active",
     href: "/projects/gwcl",
     members: [
-      {
-        name: "John Doe",
-        image: "/assets/images/img4.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img5.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img6.jpg",
-      },
-      {
-        name: "John Doe",
-        image: "/assets/images/img7.jpg",
-      },
+      { name: "John Doe", image: "/assets/images/img4.jpg" },
+      { name: "John Doe", image: "/assets/images/img5.jpg" },
+      { name: "John Doe", image: "/assets/images/img6.jpg" },
+      { name: "John Doe", image: "/assets/images/img7.jpg" },
     ],
     image: "/assets/images/capsule-icon.svg",
   },
   {
+    id: 2,
     name: "GRA RECONCILIATION 1",
     status: "Active",
     href: "/projects/gra",
@@ -80,16 +70,16 @@ export default function TableComponent() {
       <div className="flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <div className="overflow-scroll">
+            <div className="overflow-hidden">
               <table className="min-w-full divide-y divide-gray-300">
                 <thead className="bg-gray-50 border-t border-b border-gray-100">
                   <tr>
-                    {/*<th*/}
-                    {/*  scope="col"*/}
-                    {/*  className="py-4 pl-5 w-[60px] text-left text-sm font-semibold text-gray-900"*/}
-                    {/*>*/}
-                    {/*  <input type="checkbox" />*/}
-                    {/*</th>*/}
+                    <th
+                      scope="col"
+                      className="py-4 pl-5 w-[60px] text-left text-sm font-semibold text-gray-900"
+                    >
+                      <input type="checkbox" />
+                    </th>
                     <th
                       scope="col"
                       className="py-3.5 w-[80px] pl-4 pr-3 text-left text-xs font-normal uppercase text-[#677788]"
@@ -116,11 +106,14 @@ export default function TableComponent() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white text-[#677788] w-full ">
-                  {projects.map((project, key) => (
-                    <tr key={key} className="w-full">
+                <tbody className="bg-white text-[#677788]">
+                  {projects.map((project) => (
+                    <tr key={project.id}>
+                      <td className="whitespace-nowrap py-3 pl-5 pr-3 text-xs font-medium">
+                        <input type="checkbox" />
+                      </td>
                       <td className="whitespace-nowrap px-3 py-3 text-xs">
-                        {key + 1}
+                        {project.id + 1}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3 text-sm flex items-center space-x-3">
                         <div className="relative w-[42px] h-[42px] overflow-hidden rounded-full">
@@ -146,6 +139,7 @@ export default function TableComponent() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm">
                         <div className="inline-flex items-center">
                           {project.members.map((member, key) => (
+                            // eslint-disable-next-line react/jsx-key
                             <div
                               className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
                                 key !== 0 ? "-ml-[10px]" : ""
