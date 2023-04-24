@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik";
 import Image from "next/image";
 import projectImage from "../utility/assests/img1.jpg";
 import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
 // import ProjectSuccess from "@/components/ProjectSuccess";
 import {
   BsBriefcase,
@@ -10,6 +11,9 @@ import {
   BsPersonSquare,
   BsQuestion,
 } from "react-icons/bs";
+
+
+const Editor = dynamic(() => import("react-quill"), { ssr: false });
 
 const Details = () => {
   const initialValues = {
@@ -90,7 +94,7 @@ const Details = () => {
                 </span>
               </label>
               <div className="flex items-center w-full p-0.5  bg-[#fff]">
-                <ReactQuill
+                <Editor
                   value={formik.values.projectDescription}
                   onChange={(value) =>
                     formik.setFieldValue("projectDescription", value)
