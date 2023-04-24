@@ -1,10 +1,20 @@
 import Image from "next/image";
 import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
+import Link from "next/link";
 
-const projects = [
+type projectProps = {
+  name: string;
+  status: string;
+  href: string;
+  members: { name: string; image: string }[];
+  image: string;
+}[];
+
+const projects: projectProps = [
   {
     name: "GWCL",
     status: "Active",
+    href: "/projects/gwcl",
     members: [
       {
         name: "John Doe",
@@ -28,6 +38,7 @@ const projects = [
   {
     name: "GRA RECONCILIATION 1",
     status: "Active",
+    href: "/projects/gra",
     members: [
       {
         name: "John Doe",
@@ -69,16 +80,16 @@ export default function TableComponent() {
       <div className="flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <div className="overflow-hidden">
+            <div className="overflow-scroll">
               <table className="min-w-full divide-y divide-gray-300">
                 <thead className="bg-gray-50 border-t border-b border-gray-100">
                   <tr>
-                    <th
-                      scope="col"
-                      className="py-4 pl-5 w-[60px] text-left text-sm font-semibold text-gray-900"
-                    >
-                      <input type="checkbox" />
-                    </th>
+                    {/*<th*/}
+                    {/*  scope="col"*/}
+                    {/*  className="py-4 pl-5 w-[60px] text-left text-sm font-semibold text-gray-900"*/}
+                    {/*>*/}
+                    {/*  <input type="checkbox" />*/}
+                    {/*</th>*/}
                     <th
                       scope="col"
                       className="py-3.5 w-[80px] pl-4 pr-3 text-left text-xs font-normal uppercase text-[#677788]"
@@ -105,12 +116,9 @@ export default function TableComponent() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white text-[#677788]">
+                <tbody className="bg-white text-[#677788] w-full ">
                   {projects.map((project, key) => (
-                    <tr key={key}>
-                      <td className="whitespace-nowrap py-3 pl-5 pr-3 text-xs font-medium">
-                        <input type="checkbox" />
-                      </td>
+                    <tr key={key} className="w-full">
                       <td className="whitespace-nowrap px-3 py-3 text-xs">
                         {key + 1}
                       </td>

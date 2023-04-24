@@ -22,7 +22,7 @@ const TableWithImages = () => {
   const [isMember, setIsMember] = useState<boolean>(false);
   const [isSuccessful, setIsSuccessful] = useState<boolean>(false);
 
-  const stopPropagation = (e) => e.stopPropagation();
+  const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
 
   function handlerNext() {
     setIsDetail(!isDetail);
@@ -61,7 +61,7 @@ const TableWithImages = () => {
             >
               <div className="flex p-8 text-[0.87rem] font-bold justify-between items-center">
                 <h5 className="text-[#1e2022]">New Project</h5>
-                <BsXLg />
+                <BsXLg onClick={() => setAddProject(!addProject)} />
               </div>
               <div
                 className={`px-8 flex justify-center items-center ${
@@ -91,7 +91,7 @@ const TableWithImages = () => {
                   <span
                     className={`${
                       isMember ? "bg-[#377dff]" : "bg-[rgba(19,33,68,.1)]"
-                    } inline-block w-9 h-9 rounded-full  flex font-bold items-center justify-center text-[#fff] mr-2  text-[#132144;] active:bg-[#377dff] `}
+                    }  w-9 h-9 rounded-full  flex font-bold items-center justify-center text-[#fff] mr-2  text-[#132144;] active:bg-[#377dff] `}
                   >
                     2
                   </span>
@@ -126,8 +126,10 @@ const TableWithImages = () => {
         )}
       </AnimatePresence>
 
-      <Dashboard
-        buttons={
+      <Dashboard>
+        <div className="py-6 border-b border-gray-100 flex items-center justify-between">
+          <div className="font-bold text-gray-800 text-xl ">Overview</div>
+
           <button
             onClick={() => setAddProject(!addProject)}
             className="bg-blue-500 text-white rounded-md flex items-center text-sm py-3 px-4 space-x-2"
@@ -135,9 +137,7 @@ const TableWithImages = () => {
             <BsPlus className="stroke-current" />
             <span className="inline-block">New Project</span>
           </button>
-        }
-        page="Overview"
-      >
+        </div>
         <div className="w-full flex items-center bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden py-5 px-8">
           <div className="flex items-center space-x-5 w-1/5">
             <h1 className="text-6xl font-bold">12</h1>
