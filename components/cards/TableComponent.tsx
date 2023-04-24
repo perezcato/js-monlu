@@ -3,6 +3,7 @@ import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
 import Link from "next/link";
 
 type projectProps = {
+  id: number;
   name: string;
   status: string;
   href: string;
