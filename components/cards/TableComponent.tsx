@@ -142,6 +142,7 @@ export default function TableComponent() {
                           {project.members.map((member, key) => (
                             // eslint-disable-next-line react/jsx-key
                             <div
+                            key={Math.random()}
                               className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
                                 key !== 0 ? "-ml-[10px]" : ""
                               }`}

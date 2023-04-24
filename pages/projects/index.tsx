@@ -22,7 +22,8 @@ const TableWithImages = () => {
   const [isMember, setIsMember] = useState<boolean>(false);
   const [isSuccessful, setIsSuccessful] = useState<boolean>(false);
 
-  const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
+  const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+    e.stopPropagation();
 
   function handlerNext() {
     setIsDetail(!isDetail);
