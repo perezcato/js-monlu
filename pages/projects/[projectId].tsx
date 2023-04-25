@@ -115,7 +115,7 @@ const ProjectDetail = () => {
                   <span className=" bg-[rgba(9,165,190,.1)] w-full h-full rounded-full flex items-center justify-center  ">
                     <BsPeopleFill />
                   </span>
-                </Link>{" "}
+                </Link>
                 <Link
                   href="#"
                   className=" relative -ml-3.5 w-[42px] h-[42px] bg-white  rounded-full text-[#132144] border-2 border-white hover:z-10"
