@@ -65,7 +65,7 @@ const ProjectDetail = () => {
             <div className="flex text-[rgb(103,119,136)] text-[0.875rem] f">
               <p className="mr-5">Client: HtmlStream</p>
               <p className="flex items-center  flex-end ">
-                Due Date:{" "}
+                Due Date:
                 <span className="ml-2 text-[#377dff]">12/12/2020</span>
                 <BsChevronDown className="ml-2" />
               </p>

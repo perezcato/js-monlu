@@ -13,8 +13,8 @@ import {
 } from "react-icons/bs";
 import memberPic from "../utility/assests/img3.jpg";
 import { StaticImageData } from "next/image";
-import { ReactNode } from "react";
-import exp from "constants";
+// import { ReactNode } from "react";
+// import exp from "constants";
 
 type sideData = {
   title: string;

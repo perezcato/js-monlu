@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Sidenav = () => {
   return (
-    <div className="bg-white w-[260px] min-h-screen border-r border-gray-100">
+    <div className="bg-white w-[260px] h-screen border-r border-gray-100 sticky top-0">
       <div className="flex items-center px-5 py-5 scale-90">
         <Image
           src={"/assets/images/logo-100.png"}
