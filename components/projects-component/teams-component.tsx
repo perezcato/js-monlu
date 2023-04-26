@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Person {
   name: string;
@@ -143,7 +144,16 @@ export default function Example() {
   }
 
   return (
-    <div className="p-4 sm:px-6 lg:px-8 border rounded-lg">
+    <>
+    <div className="py-12">
+            <ul className="flex border-b">
+                <Link href='/overview'><li className="px-4">Overview</li></Link>
+                <Link href='/overview'><li className="px-4 ">Activity</li></Link>
+                <Link href='/teams'><li className="px-4 border-b border-blue-600 text-blue-600 font-medium">Teams</li> </Link>
+                <Link href='/overview'><li className="px-4 ">Settings</li></Link>
+            </ul>
+        </div>
+        <div className="p-4 sm:px-6 lg:px-8 border rounded-lg">
       <div className="sm:flex sm:items-center pb-4 border-b">
         <div className="sm:flex-auto pt-4">
           <div className="relative">
@@ -412,5 +422,7 @@ export default function Example() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }

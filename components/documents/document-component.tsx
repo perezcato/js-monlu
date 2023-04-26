@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 import Image from "next/image";
 import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
 
 const projects = [
   {
     id: 1,
-    name: "GWCL",
+    name: "Ova_bs_2023.csv",
     status: "Active",
     members: [
       { name: "John Doe", image: "/assets/images/img4.jpg" },
@@ -17,7 +17,39 @@ const projects = [
   },
   {
     id: 2,
-    name: "GRA RECONCILIATION 1",
+    name: "GRA_rec_file.xsl",
+    status: "Active",
+    members: [
+      {
+        name: "John Doe",
+        image: "/assets/images/img8.jpg",
+      },
+      {
+        name: "John Doe",
+        image: "/assets/images/img9.jpg",
+      },
+    ],
+    image: "/assets/images/spec-icon.svg",
+  },
+  {
+    id: 3,
+    name: "GRA_rec_file.xsl",
+    status: "Active",
+    members: [
+      {
+        name: "John Doe",
+        image: "/assets/images/img8.jpg",
+      },
+      {
+        name: "John Doe",
+        image: "/assets/images/img9.jpg",
+      },
+    ],
+    image: "/assets/images/spec-icon.svg",
+  },
+  {
+    id: 4,
+    name: "GRA_rec_file.xsl",
     status: "Active",
     members: [
       {
@@ -33,12 +65,14 @@ const projects = [
   },
 ];
 
+
+
 export default function TableComponent() {
-  const router = useRouter();
+  const router = useRouter()
 
   const navigateHandler = () => {
-    router.push("/overview");
-  };
+    router.push('/teams')
+  }
 
   return (
     <div className="w-full bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden">
@@ -86,23 +120,11 @@ export default function TableComponent() {
                       scope="col"
                       className="py-3.5 pl-4 pr-3 text-left text-xs font-normal uppercase text-[#677788] "
                     >
-                      Project
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 w-[178px] py-3.5 text-left text-xs font-normal uppercase text-[#677788]"
-                    >
-                      Members
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 w-[188px] text-left text-xs font-normal uppercase text-[#677788]"
-                    >
-                      Status
+                      Name
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white text-[#677788] cursor-pointer">
+                <tbody className="bg-white text-[#677788]">
                   {projects.map((project) => (
                     <tr key={project.id} onClick={navigateHandler}>
                       <td className="whitespace-nowrap py-3 pl-5 pr-3 text-xs font-medium">
@@ -112,16 +134,8 @@ export default function TableComponent() {
                         {project.id + 1}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3 text-sm flex items-center space-x-3">
-                        <div className="relative w-[42px] h-[42px] overflow-hidden rounded-full">
-                          <Image
-                            fill
-                            alt="company logo"
-                            style={{
-                              objectFit: "cover",
-                              objectPosition: "center",
-                            }}
-                            src={project.image}
-                          />
+                        <div className="relative w-[42px] text-blue-700 font-medium rounded-full flex items-center justify-center bg-blue-100 h-[42px] overflow-hidden rounded-full">
+                          <p>O</p>
                         </div>
                         <div>
                           <div className="text-sm font-semibold text-black">
@@ -129,36 +143,6 @@ export default function TableComponent() {
                           </div>
                           <div className="text-xs text-[#677788]">
                             Updated 5 minutes ago
-                          </div>
-                        </div>
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm">
-                        <div className="inline-flex items-center">
-                          {project.members.map((member, key) => (
-                            // eslint-disable-next-line react/jsx-key
-                            <div
-                              className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
-                                key !== 0 ? "-ml-[10px]" : ""
-                              }`}
-                            >
-                              <Image
-                                fill
-                                alt="company logo"
-                                style={{
-                                  objectFit: "cover",
-                                  objectPosition: "center",
-                                }}
-                                src={member.image}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm">
-                        <div className="flex items-center space-x-2">
-                          <div className="h-[7px] w-[7px] rounded-full bg-[#bdc5d1]" />
-                          <div className="text-sm text-[#677788]">
-                            In progress
                           </div>
                         </div>
                       </td>
