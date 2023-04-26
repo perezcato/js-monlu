@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+    "@nivo/pie": "^0.80.0",
     "@types/node": "18.15.10",
     "@types/react": "18.0.30",
     "@types/react-dom": "18.0.11",
@@ -23,6 +24,7 @@
     "nextjs-progressbar": "^0.0.16",
     "prettier": "^2.8.7",
     "react": "18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-data-table-component": "^7.5.3",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",

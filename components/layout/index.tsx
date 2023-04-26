@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "@/components/layout/navbar";
 import Sidenav from "@/components/layout/sidenav";
+import { prop } from "react-data-table-component/dist/src/DataTable/util";
 
 type DashboardProps = {
   children: React.ReactNode;
-  page: string;
+  page?: string;
 
   buttons?: React.ReactNode | React.ReactNode[];
 };
@@ -14,13 +15,7 @@ const Dashboard = (props: DashboardProps) => {
       <Sidenav />
       <div className="flex-1">
         <Navbar />
-        <div className="px-4 space-y-8">
-          <div className="py-6 border-b border-gray-100 flex items-center justify-between">
-            <div className="font-bold text-gray-800 text-xl">{props.page}</div>
-            <div>{props.buttons && props.buttons}</div>
-          </div>
-          {props.children}
-        </div>
+        <div className="px-4 py-6">{props.children}</div>
       </div>
     </div>
   );

@@ -6,3 +6,7 @@
 ---gray-dark - #132144;
 
 --text-color - #1e2022
+
+ <div className="mr-3 py-5 px-4 hover:text-[#377dff] hover:border-b-4 active:border-b-4 active:border-b-[#377dff]">
+
+ <Link href="#" className="active:font-bold active:text-[#377dff]">
