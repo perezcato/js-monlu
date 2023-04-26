@@ -1,22 +1,12 @@
 import Image from "next/image";
 import { BsDownload, BsChevronDown, BsFilter, BsSearch } from "react-icons/bs";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
-type projectProps = {
-  id: number;
-  name: string;
-  status: string;
-  href: string;
-  members: { name: string; image: string }[];
-  image: string;
-}[];
-
-const projects: projectProps = [
+const projects = [
   {
     id: 1,
     name: "GWCL",
     status: "Active",
-    href: "/projects/gwcl",
     members: [
       { name: "John Doe", image: "/assets/images/img4.jpg" },
       { name: "John Doe", image: "/assets/images/img5.jpg" },
@@ -29,7 +19,6 @@ const projects: projectProps = [
     id: 2,
     name: "GRA RECONCILIATION 1",
     status: "Active",
-    href: "/projects/gra",
     members: [
       {
         name: "John Doe",
@@ -45,6 +34,8 @@ const projects: projectProps = [
 ];
 
 export default function TableComponent() {
+  const router = useRouter();
+
   return (
     <div className="w-full bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden">
       <div className="px-5 py-4 flex items-center justify-between">
@@ -109,7 +100,11 @@ export default function TableComponent() {
                 </thead>
                 <tbody className="bg-white text-[#677788]">
                   {projects.map((project) => (
-                    <tr key={project.id}>
+                    <tr
+                      onClick={async () => router.push("/projects/details")}
+                      key={project.id}
+                      className={"cursor-pointer"}
+                    >
                       <td className="whitespace-nowrap py-3 pl-5 pr-3 text-xs font-medium">
                         <input type="checkbox" />
                       </td>
@@ -142,7 +137,7 @@ export default function TableComponent() {
                           {project.members.map((member, key) => (
                             // eslint-disable-next-line react/jsx-key
                             <div
-                            key={Math.random()}
+                              key={key}
                               className={`relative w-[24px] h-[24px] overflow-hidden border border-white rounded-full ${
                                 key !== 0 ? "-ml-[10px]" : ""
                               }`}

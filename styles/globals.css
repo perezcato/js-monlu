@@ -14,3 +14,26 @@
   height: 100px;
   min-height: 100px; /* Set a minimum height to ensure the plot is visible */
 }
+@layer utilities {
+  .lineAfter::after{
+    /*after:border after:border-[rgba(231,234,243,.7)]  after:left-6 after:top-[1.3rem]  after:absolute after:h-full*/
+    position: absolute;
+    left: 1.6rem;
+    /*height: calc(100% - .25rem);*/
+    border-left: .125rem solid rgba(231,234,243,.7);
+    content: "";
+  }
+  .header{
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1e2022;
+  }
+  .listItem:first-child{
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+  .listItem:last-child{
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+  }
+}
