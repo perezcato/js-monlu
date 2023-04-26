@@ -150,7 +150,7 @@ const ProjectDetail = () => {
           </div>
           <div>
             <Link
-              href="#"
+              href="/activity"
               className="active:font-bold active:text-[#377dff] py-5 px-4 hover:text-[#377dff] hover:border-b-4 active:border-b-4 active:border-b-[#377dff]"
             >
               Activity
@@ -158,7 +158,7 @@ const ProjectDetail = () => {
           </div>
           <div>
             <Link
-              href="#"
+              href="/teams"
               className="active:font-bold active:text-[#377dff] py-5 px-4 hover:text-[#377dff] hover:border-b-4 active:border-b-4 active:border-b-[#377dff]"
             >
               Teams
@@ -166,7 +166,7 @@ const ProjectDetail = () => {
           </div>
           <div>
             <Link
-              href="#"
+              href="/settings"
               className="active:font-bold active:text-[#377dff] py-5 px-4 hover:text-[#377dff] hover:border-b-4 active:border-b-4 active:border-b-[#377dff]"
             >
               Settings

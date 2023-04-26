@@ -119,7 +119,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Teams() {
   const checkbox = useRef<HTMLInputElement>(null);
   const [checked, setChecked] = useState<boolean>(false);
   const [indeterminate, setIndeterminate] = useState<boolean>(false);
@@ -187,7 +187,7 @@ export default function Example() {
           </svg>
 
           <button
-          onClick={()=>setHidden(!hidden)}
+            onClick={() => setHidden(!hidden)}
             type="button"
             className="block px-2 py-1.5 text-center text-sm font-semibold leading-6 text-gray-400 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
@@ -196,22 +196,33 @@ export default function Example() {
           <img src="/assets/arrow-down.svg" alt="" className="ml-2 w-4" />
         </div>
       </div>
-      {hidden && (<div className="flex flex-col">
-        <div className="flex justify-between py-8">
-          <div className="w-3/12">
-            <label>Teams</label>
-            <input placeholder="Name, role, department" className="w-full border my-2 p-2 rounded"/>
-          </div>
-          <div className="w-3/12">
-            <label>Tags</label>
-            <input placeholder="enter top tags" className="w-full border my-2 p-2 rounded"/>
-          </div>
-          <div className="w-3/12">
-            <label>Ratings</label>
-            <input placeholder="3 items selected" className="w-full border my-2 p-2 rounded"/>
+      {hidden && (
+        <div className="flex flex-col">
+          <div className="flex justify-between py-8">
+            <div className="w-3/12">
+              <label>Teams</label>
+              <input
+                placeholder="Name, role, department"
+                className="w-full border my-2 p-2 rounded"
+              />
+            </div>
+            <div className="w-3/12">
+              <label>Tags</label>
+              <input
+                placeholder="enter top tags"
+                className="w-full border my-2 p-2 rounded"
+              />
+            </div>
+            <div className="w-3/12">
+              <label>Ratings</label>
+              <input
+                placeholder="3 items selected"
+                className="w-full border my-2 p-2 rounded"
+              />
+            </div>
           </div>
         </div>
-      </div>)}
+      )}
       <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">

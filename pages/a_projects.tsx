@@ -22,7 +22,8 @@ const TableWithImages = () => {
   const [isMember, setIsMember] = useState<boolean>(false);
   const [isSuccessful, setIsSuccessful] = useState<boolean>(false);
 
-  const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => e.stopPropagation();
+  const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+    e.stopPropagation();
 
   function handlerNext() {
     setIsDetail(!isDetail);
@@ -49,7 +50,7 @@ const TableWithImages = () => {
             initial={"initial"}
             animate={"animate"}
             exit={"exit"}
-            className="absolute z-10 h-screen w-screen inset-0 bg-black/[0.3]"
+            className="absolute z-30 h-screen w-screen inset-0 bg-black/[0.3]"
           >
             <motion.div
               variants={modalContentVariants}
@@ -126,8 +127,9 @@ const TableWithImages = () => {
         )}
       </AnimatePresence>
 
-      <Dashboard
-        buttons={
+      <Dashboard>
+        <div className="py-6 border-b border-gray-100 flex items-center justify-between">
+          <div className="font-bold text-gray-800 text-xl ">Overview</div>
           <button
             onClick={() => setAddProject(!addProject)}
             className="bg-blue-500 text-white rounded-md flex items-center text-sm py-3 px-4 space-x-2"
@@ -135,9 +137,8 @@ const TableWithImages = () => {
             <BsPlus className="stroke-current" />
             <span className="inline-block">New Project</span>
           </button>
-        }
-        page="Overview"
-      >
+        </div>
+
         <div className="w-full flex items-center bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden py-5 px-8">
           <div className="flex items-center space-x-5 w-1/5">
             <h1 className="text-6xl font-bold">12</h1>

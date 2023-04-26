@@ -1,5 +1,6 @@
 import React from "react";
 import FinanceChart from "@/components/cards/FinancialGraph";
+import { useRouter } from "next/router";
 
 interface CardProps {
   title: string;
@@ -8,9 +9,13 @@ interface CardProps {
 }
 const Card = (props: CardProps) => {
   const { title, value, percentage } = props;
+  const router = useRouter();
   return (
     <>
-      <div className="bg-white overflow-hidden border border-gray-100 shadow shadow-slate-100 cursor-pointer rounded-lg px-4 py-4 hover:shadow-lg hover:shadow-slate-100 transition-shadow duration-300">
+      <div
+        onClick={async () => router.push("/projects")}
+        className="bg-white overflow-hidden border border-gray-100 shadow cursor-pointer shadow-slate-100 cursor-pointer rounded-lg px-4 py-4 hover:shadow-lg hover:shadow-slate-100 transition-shadow duration-300"
+      >
         <div className="flex w-full">
           <div className="flex flex-col w-6/12 space-y-3">
             <h3 className="text-xs font-medium text-gray-400 uppercase">
