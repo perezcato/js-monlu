@@ -12,6 +12,8 @@ import {
   BsQuestion,
 } from "react-icons/bs";
 
+import "react-quill/dist/quill.snow.css";
+
 const Editor: React.ComponentType<ReactQuill.ReactQuillProps> = dynamic(
   () => import("react-quill"),
   { ssr: false }
@@ -117,7 +119,7 @@ const Details = () => {
                   onChange={(value) =>
                     formik.setFieldValue("projectDescription", value)
                   }
-                  className="w-full"
+                  className="w-full h-auto"
                 />
               </div>
             </div>

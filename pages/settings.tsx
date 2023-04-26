@@ -61,7 +61,7 @@ const Settings = () => {
               <h2 className="font-semibold text-[0.984rem] ">Details</h2>
             </div>
             <Details />
-            <div className="px-[2.5rem] py-[1.3rem] flex justify-end gap-3 border-t border-t-[rgba(231,234,243,0.7]">
+            <div className="px-[2.5rem] py-[1.3rem] flex justify-end gap-3 mt-3 border-t border-t-[rgba(231,234,243,0.7]">
               <button className="border border-[rgba(231,234,243,.7)] px-4 py-2 text-[#677788] hover:shadow-md hover:shadow-[rgba(140,152,164,.25)] hover:bg-white hover:text-[#1366ff] rounded-md">
                 Cancel
               </button>
