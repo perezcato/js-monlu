@@ -53,7 +53,7 @@ export const sidebarData: sideData = [
     subNav: [
       {
         title: "Dashboard",
-        path: "/",
+        path: "/projects",
         icon: BsPerson,
       },
     ],
