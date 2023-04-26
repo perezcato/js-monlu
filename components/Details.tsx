@@ -110,7 +110,7 @@ const Details = () => {
               <label className="flex items-center text-[#1e2022] ">
                 Project Description
                 <span className="inline-block ml-4 text-[rgba(19,33,68,.4)]">
-                  (optional)
+                  (optional) {""}
                 </span>
               </label>
               <div className="flex items-center w-full p-0.5  bg-[#fff]">
