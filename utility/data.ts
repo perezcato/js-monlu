@@ -7,6 +7,8 @@ import {
   BsPersonLinesFill,
   BsFolder2Open,
 } from "react-icons/bs";
+import memberPic from "../utility/assests/img3.jpg";
+import { StaticImageData } from "next/image";
 
 type sideData = {
   title: string;
@@ -15,6 +17,8 @@ type sideData = {
   label?: string;
   subNav: { title: string; path: string; icon: any }[];
 }[];
+
+type memberData = { image: StaticImageData; name: string; email: string }[];
 
 export const sidebarData: sideData = [
   {
@@ -105,5 +109,18 @@ export const App: any = [
     iconDown: BsChevronDown,
     iconUp: BsChevronUp,
     label: "Apps",
+  },
+];
+
+export const MembersData: memberData = [
+  {
+    image: memberPic,
+    name: "John Doe",
+    email: "example@mail.com",
+  },
+  {
+    image: memberPic,
+    name: "Jane Doe",
+    email: "example@mail.com",
   },
 ];
