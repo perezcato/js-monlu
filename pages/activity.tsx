@@ -159,7 +159,7 @@ const Activity = () => {
                     Marked project status as
                     <span className=" flex items-center ml-1  text-[#377dff] text-[0.74em] font-semibold bg-[rgba(55,125,255,.1)] p-0.5 px-1.5 rounded-full">
                       <span className="inline-block w-2 h-2 rounded-full bg-[rgb(55,125,255)] mr-2"></span>
-                      "In progress"
+                      {'"In progress"'}
                     </span>
                   </p>
                 </div>
@@ -227,7 +227,7 @@ const Activity = () => {
                 <div className="flex-1">
                   <h5 className="header mb-1">Rachel King</h5>
                   <p className="flex mb-1">
-                    Earned a "Top endorsed"
+                    Earned a {'"Top endorsed"'}
                     <span className=" uppercase  flex items-center ml-1 w-min text-[#377dff]">
                       <BsPatchCheckFill className="mr-2" />
                     </span>
@@ -252,7 +252,7 @@ const Activity = () => {
                     Marked project status as
                     <span className=" flex items-center ml-1  text-[#377dff] text-[0.74em] font-semibold bg-[rgba(55,125,255,.1)] p-0.5 px-1.5 rounded-full">
                       <span className="inline-block w-2 h-2 rounded-full bg-[rgb(55,125,255)] mr-2"></span>
-                      "In progress"
+                      {'"In progress"'}
                     </span>
                   </p>
                 </div>
@@ -313,14 +313,14 @@ const Activity = () => {
                     Marked project status as
                     <span className=" flex items-center ml-1  text-[#377dff] text-[0.74em] font-semibold bg-[rgba(55,125,255,.1)] p-0.5 px-1.5 rounded-full">
                       <span className="inline-block w-2 h-2 rounded-full bg-[rgb(55,125,255)] mr-2"></span>
-                      "In progress"
+                      {'"In progress"'}
                     </span>
                   </p>
                 </div>
               </div>
               {/*  end of wrapper*/}
             </div>
-            <div className="border border-[gba(231,234,243,.7)] grid hover:shadow-md hover:text-[#1366ff] hover:bg-white  ">
+            <div className="border border-[gba(231,234,243,.7)] grid hover:shadow-md hover:text-[#1366ff] hover:bg-white">
               <Link
                 href="#"
                 className="flex items-center place-self-center px-4 py-2.5 "

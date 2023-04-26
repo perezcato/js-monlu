@@ -46,7 +46,7 @@ const Details = () => {
             <div className="mt-3 flex items-center ">
               <label className="inline-block relative">
                 <Image
-                  src={selectedFile}
+                  src={selectedFile as string}
                   alt=""
                   width={80}
                   height={80}
