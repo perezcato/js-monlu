@@ -16,7 +16,9 @@ const Dashboard = (props: DashboardProps) => {
       <Sidenav />
       <div className="flex-1">
         <Navbar />
-        <div className="px-4 py-6">{props.children}</div>
+        <div className="px-4 py-6 h-screen overflow-y-scroll">
+          {props.children}
+        </div>
         <Footer />
       </div>
     </div>

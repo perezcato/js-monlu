@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Field, Form, Formik } from "formik";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import projectImage from "../utility/assests/img1.jpg";
 import ReactQuill from "react-quill";
 import dynamic from "next/dynamic";
@@ -12,8 +12,10 @@ import {
   BsQuestion,
 } from "react-icons/bs";
 
-
-const Editor = dynamic(() => import("react-quill"), { ssr: false });
+const Editor: React.ComponentType<ReactQuill.ReactQuillProps> = dynamic(
+  () => import("react-quill"),
+  { ssr: false }
+);
 
 const Details = () => {
   const initialValues = {
@@ -21,6 +23,20 @@ const Details = () => {
     projectName: "",
     projectDescription: "",
   };
+  const [selectedFile, setSelectedFile] = useState<
+    StaticImageData | string | ArrayBuffer | null
+  >(projectImage);
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+    const photo = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(photo);
+    reader.onload = () => {
+      const path = reader.result;
+      setSelectedFile(reader.result);
+    };
+  };
+
   return (
     <>
       <Formik initialValues={initialValues} onSubmit={(values) => {}}>
@@ -30,15 +46,17 @@ const Details = () => {
             <div className="mt-3 flex items-center ">
               <label className="inline-block relative">
                 <Image
-                  src={projectImage}
+                  src={selectedFile}
                   alt=""
-                  width={78}
-                  className="rounded-full"
+                  width={80}
+                  height={80}
+                  className="rounded-full "
+                  objectFit="cover"
                 />
                 <span className="inline-block absolute top-14 right-1 bg-[#fff] p-1 rounded-full text-[rgba(19,33,68,.5)] hover:bg-[#377dff] hover:text-[#fff]">
                   <BsPencilFill />
                 </span>
-                <input type="file" className="hidden" />
+                <input type="file" className="hidden" onChange={handleFile} />
               </label>
               <button className="shadow-lg shadow-black/50 text-[#377dff] p-2 rounded ml-4">
                 Delete
@@ -99,7 +117,7 @@ const Details = () => {
                   onChange={(value) =>
                     formik.setFieldValue("projectDescription", value)
                   }
-                  className=" w-full"
+                  className="w-full"
                 />
               </div>
             </div>

@@ -50,14 +50,14 @@ const TableWithImages = () => {
             initial={"initial"}
             animate={"animate"}
             exit={"exit"}
-            className="absolute z-10 h-screen w-screen inset-0 bg-black/[0.3]"
+            className="absolute z-30 h-screen w-screen inset-0 bg-black/[0.3]"
           >
             <motion.div
               variants={modalContentVariants}
               initial={"initial"}
               animate={"animate"}
               exit={"exit"}
-              className="bg-white w-[800px] pb-3.5 mx-auto mt-20 rounded-2xl min-h-[30rem] flex flex-col"
+              className="bg-white w-[800px] pb-3.5 mx-auto mt-20 rounded-2xl min-h-[30rem] flex flex-col z-30"
               onClick={(e) => stopPropagation(e)}
             >
               <div className="flex p-8 text-[0.87rem] font-bold justify-between items-center">
