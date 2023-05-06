@@ -16,9 +16,9 @@ import ProjectSuccess from "@/components/ProjectSuccess";
 import ProjectSuccessFooter from "@/components/ProjectSuccessFooter";
 
 const TableWithImages = () => {
-  const [addProject, setAddProject] = React.useState(false);
-
+  const [addProject, setAddProject] = useState<boolean>(false);
   const [isDetail, setIsDetail] = useState<boolean>(true);
+  // const [isDetail, setIsDetail] = useState<boolean>(true);
   const [isMember, setIsMember] = useState<boolean>(false);
   const [isSuccessful, setIsSuccessful] = useState<boolean>(false);
 
@@ -92,7 +92,7 @@ const TableWithImages = () => {
                   <span
                     className={`${
                       isMember ? "bg-[#377dff]" : "bg-[rgba(19,33,68,.1)]"
-                    } inline-block w-9 h-9 rounded-full  flex font-bold items-center justify-center text-[#fff] mr-2  text-[#132144;] active:bg-[#377dff] `}
+                    }  w-9 h-9 rounded-full  flex font-bold items-center justify-center text-[#fff] mr-2  text-[#132144;] active:bg-[#377dff] `}
                   >
                     2
                   </span>

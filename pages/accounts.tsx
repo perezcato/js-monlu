@@ -43,6 +43,22 @@ const TableWithImages = () => {
         }
         page="Overview"
       >
+        <div className="px-10 mb-8 mt-5 ">
+          <div>
+            <ul className="flex mb-2 text-[#97a4af]">
+              <li>
+                Pages <span>/</span>
+              </li>
+              <li>
+                Project <span>/</span>
+              </li>
+              <li>Accounts</li>
+            </ul>
+            <h1 className="text-[1.4rem] text-[#1e2022] font-semibold ">
+              Accounts
+            </h1>
+          </div>
+        </div>
         <div className="w-full flex items-center bg-white m-auto border border-gray-100 rounded-xl shadow-md shadow-slate-100 overflow-hidden py-5 px-8">
           <div className="flex items-center space-x-5 w-1/5">
             <h1 className="text-6xl font-bold">12</h1>

@@ -223,14 +223,14 @@ const ProjectDetail = () => {
                 </span>
                 <Link
                   href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
                 >
                   <Image src={copyImg} alt="" width={20} className="mr-3" />
                   Copy
                 </Link>
                 <Link
                   href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
                 >
                   <Image src={printImg} alt="" width={20} className="mr-3" />
                   Print
@@ -241,21 +241,21 @@ const ProjectDetail = () => {
                 </span>
                 <Link
                   href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
                 >
                   <Image src={excelImg} alt="" width={20} className="mr-3" />
                   Excel
                 </Link>
                 <Link
                   href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
                 >
                   <Image src={csvImg} alt="" width={20} className="mr-3" />
                   .CSV
                 </Link>
                 <Link
                   href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
                 >
                   <Image src={pdfImg} alt="" width={20} className="mr-3" />
                   PDF
