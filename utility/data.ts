@@ -102,7 +102,7 @@ export const APITableData: APITableData = [
 export const sidebarData: sideData = [
   {
     title: "Project",
-    path: "/projects",
+    path: "",
     icon: BsFolder2Open,
     label: "Pages",
     subNav: [
@@ -115,7 +115,7 @@ export const sidebarData: sideData = [
   },
   {
     title: "Accounts",
-    path: "/accounts",
+    path: "",
     icon: BsPersonLinesFill,
     subNav: [
       {
@@ -132,7 +132,7 @@ export const sidebarData: sideData = [
   },
   {
     title: "Structure",
-    path: "/accounts",
+    path: "",
     icon: BsMenuUp,
     subNav: [
       {
@@ -152,7 +152,7 @@ export const sidebarData: sideData = [
 export const sidebarDataApp: sideData = [
   {
     title: "API",
-    path: "/api",
+    path: "/apikey",
     icon: BsKey,
     label: "Apps",
   },

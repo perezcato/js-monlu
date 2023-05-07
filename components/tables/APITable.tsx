@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { APITableData } from "@/utility/data";
 import { BsChevronDown, BsClipboard } from "react-icons/bs";
 import Link from "next/link";
+import Dropdown from "@/components/tables/Dropdown";
 
 interface APITableProps {
   name: string;
@@ -10,13 +11,11 @@ interface APITableProps {
   created: string;
 }
 const APITable = () => {
-  const [dropdown, setDropdown] = useState<boolean>(false);
-
-  const toggle = () => setDropdown(!dropdown);
-
   return (
-    <div className="block overflow-x-auto w-full min-h-[70vh]">
-      <table className={"items-center w-full bg-white/70 border-collapse "}>
+    <div className="block overflow-x-auto w-full min-h-[70vh] ">
+      <table
+        className={"items-center w-full bg-white/70 border-collapse rounded-md"}
+      >
         <thead
           className={
             "uppercase text-[#677788] text-[0.74rem] font-[400] border-[1px]  border-l-0 border-r-0 border-[rgba(231, 234, 243, 0.7)] py-5 "
@@ -78,40 +77,7 @@ const APITable = () => {
               </td>
               <td className="px-4 py-3">{data.created}</td>
               <td className="px-4 py-3">
-                <div className={"relative"}>
-                  <button
-                    onClick={toggle}
-                    className={
-                      "flex items-center border border-solid border-[rgba(231,234,243,.7)] rounded px-4 py-2 hover:shadow hover:text-[#377dff] transition-all duration-500"
-                    }
-                  >
-                    More <BsChevronDown className={"ml-2"} />
-                  </button>
-                  <div
-                    className={`${
-                      dropdown ? "" : "hidden"
-                    } flex flex-col absolute border border-solid border-[rgba(231,234,243,.7)] bg-white shadow shadow-[rgba(140,152,164,.175)] p-2 rounded-md text-[rgb(30,32,34)]`}
-                  >
-                    <Link href={""} className={"mb-1 px-4 py-2"}>
-                      Rename
-                    </Link>
-                    <Link href={""} className={"mb-1 px-4 py-2"}>
-                      Regenerate Keys
-                    </Link>
-                    <Link href={""} className={"mb-1 px-4 py-2"}>
-                      Disable
-                    </Link>
-                    <div
-                      className={"border-t border-t-[rgba(231,234,243,.7)]"}
-                    ></div>
-                    <Link
-                      href={""}
-                      className={"mb-1 px-4 py-2 text-[rgb(237,76,120)]"}
-                    >
-                      Delete
-                    </Link>
-                  </div>
-                </div>
+                <Dropdown />
               </td>
             </tr>
           ))}

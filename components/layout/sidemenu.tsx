@@ -17,7 +17,7 @@ const Sidemenu = (props: any) => {
         {item.label}
       </div>
       <Link
-        href=""
+        href={item.path}
         className="w-full flex justify-between items-center mt-2 hover:bg-[#eee] px-4 py-2 rounded-lg"
         onClick={item.subNav && showNav}
       >

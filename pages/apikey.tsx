@@ -24,10 +24,14 @@ import ButtonCard from "@/components/buttonCard";
 const Apikey = () => {
   const [dropDown, setDropDown] = useState<boolean>(false);
   const [addModal, setAddModal] = useState<boolean>(false);
+  const [Popover, setPopover] = useState<boolean>(false);
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
     e.stopPropagation();
 
   const showDropdown = () => setDropDown((prev) => !prev);
+
+  const showPopover = () => setPopover((prev) => !prev);
+  const closePopover = () => setPopover((prev) => !prev);
 
   const initialValue = {
     apikey: "",
@@ -93,18 +97,27 @@ const Apikey = () => {
                     What is an API?
                     <span className={"ml-2"}>
                       <BsQuestionCircle
-                        aria-label={""}
                         data-popover-target={"popover-default"}
-                        className=""
+                        onMouseOver={showPopover}
+                        onMouseOut={closePopover}
                       />
                     </span>
                   </p>
-                  <div className={"absolute w-64 hidden"}>
+                  <div
+                    className={`absolute w-[12rem] text-center text-[0.78rem] p-1 rounded-md ${
+                      Popover ? "" : "hidden"
+                    } bg-[#132144] text-[#fff] -top-[4.5rem] left-6`}
+                  >
                     <p>
                       API stands for application programming interface. It can
                       be helpful to think of the API as a way for different apps
                       to talk to one another.
                     </p>
+                    <div
+                      className={
+                        "absolute w-2 h-2 bg-[#132144] right-[4rem] rotate-45"
+                      }
+                    ></div>
                   </div>
 
                   <div className={"px-[2rem] py-8"}>
@@ -158,84 +171,93 @@ const Apikey = () => {
             />
           ))}
         </div>
-        <div className="mx-[1.5rem] px-[1.5rem] card border-b flex justify-between">
-          <div className={"p-4 "}>
-            <h4 className={"font-semibold text-[#1e2022] text-[0.98rem]"}>
-              API Keys
-            </h4>
-            <p className={"mt-1"}>
-              Keys you have generated to connect with third-party clients or
-              access the
-              <Link href="#" className={"font-semibold text-[#377dff] ml-2"}>
-                Recksoft API.
-              </Link>
-            </p>
-          </div>
-          <div>
-            <div className="p-4 ">
-              <button
-                onClick={showDropdown}
-                className="flex items-center bg-white  p-2 space-x-1 rounded hover:text-[#1366ff] border border-[rgba(231,234,243,.7)] hover:border hover:border-[rgba(231,234,243,.7)] hover:shadow-lg hover:shadow-[rgba(140,152,164,.25)] transition-all duration-500"
-              >
-                <BsDownload className="mr-1" />
-                Export
-                <BsChevronDown />
-              </button>
+        <div className={"card rounded-md"}>
+          <div className={"flex justify-between px-[1.5rem] py-[1rem] "}>
+            <div className={""}>
+              <h4 className={"font-semibold text-[#1e2022] text-[0.98rem]"}>
+                API Keys
+              </h4>
+              <p className={"mt-1"}>
+                Keys you have generated to connect with third-party clients or
+                access the
+                <Link href="#" className={"font-semibold text-[#377dff] ml-2"}>
+                  Recksoft API.
+                </Link>
+              </p>
+            </div>
+            <div>
+              <div className="p-4 ">
+                <button
+                  onClick={showDropdown}
+                  className="flex items-center bg-white  p-2 space-x-1 rounded hover:text-[#1366ff] border border-[rgba(231,234,243,.7)] hover:border hover:border-[rgba(231,234,243,.7)] hover:shadow-lg hover:shadow-[rgba(140,152,164,.25)] transition-all duration-500"
+                >
+                  <BsDownload className="mr-1" />
+                  Export
+                  <BsChevronDown />
+                </button>
 
-              <div
-                className={`${
-                  dropDown ? "" : "hidden"
-                } min-w-[10rem]  p-[0.5rem] flex flex-col bg-white text-[#8c98a4] text-[0.875rem] rounded capitalize absolute z-10 right-[4.5rem] shadow-lg border border-[rgba(19,33,68,.1)] shadow-[rgba(140,152,164,.175)]`}
-              >
-                <span className=" inline-block px-4 py-2 uppercase font-bold text-[0.656rem]">
-                  options
-                </span>
-                <Link
-                  href=""
-                  className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                <div
+                  className={`${
+                    dropDown ? "" : "hidden"
+                  } min-w-[10rem]  p-[0.5rem] flex flex-col bg-white text-[#8c98a4] text-[0.875rem] rounded capitalize absolute z-10 right-[4.5rem] shadow-lg border border-[rgba(19,33,68,.1)] shadow-[rgba(140,152,164,.175)]`}
                 >
-                  <Image src={copyImg} alt="" width={20} className="mr-3" />
-                  Copy
-                </Link>
-                <Link
-                  href=""
-                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
-                >
-                  <Image src={printImg} alt="" width={20} className="mr-3" />
-                  Print
-                </Link>
-                <div className="h-[1px] w-[90%] bg-[rgba(19,33,68,.1)] mx-auto"></div>
-                <span className="inline-block px-4 py-2 uppercase font-bold text-[0.656rem] ">
-                  download options
-                </span>
-                <Link
-                  href=""
-                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
-                >
-                  <Image src={excelImg} alt="" width={20} className="mr-3" />
-                  Excel
-                </Link>
-                <Link
-                  href=""
-                  className="px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
-                >
-                  <Image src={csvImg} alt="" width={20} className="mr-3" />
-                  .CSV
-                </Link>
-                <Link
-                  href=""
-                  className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
-                >
-                  <Image src={pdfImg} alt="" width={20} className="mr-3" />
-                  PDF
-                </Link>
+                  <span className=" inline-block px-4 py-2 uppercase font-bold text-[0.656rem]">
+                    options
+                  </span>
+                  <Link
+                    href=""
+                    className="inline-block px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  >
+                    <Image src={copyImg} alt="" width={20} className="mr-3" />
+                    Copy
+                  </Link>
+                  <Link
+                    href=""
+                    className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  >
+                    <Image src={printImg} alt="" width={20} className="mr-3" />
+                    Print
+                  </Link>
+                  <div className="h-[1px] w-[90%] bg-[rgba(19,33,68,.1)] mx-auto"></div>
+                  <span className="inline-block px-4 py-2 uppercase font-bold text-[0.656rem] ">
+                    download options
+                  </span>
+                  <Link
+                    href=""
+                    className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  >
+                    <Image src={excelImg} alt="" width={20} className="mr-3" />
+                    Excel
+                  </Link>
+                  <Link
+                    href=""
+                    className="px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  >
+                    <Image src={csvImg} alt="" width={20} className="mr-3" />
+                    .CSV
+                  </Link>
+                  <Link
+                    href=""
+                    className=" px-4 py-2 text-[#1e2022] hover:text-[#1b1d1f] hover:bg-[rgba(19,33,68,.1)] flex"
+                  >
+                    <Image src={pdfImg} alt="" width={20} className="mr-3" />
+                    PDF
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+          <div
+            className={
+              "px-[1.5rem] shadow-md shadow-[rgba(140,152,164,.075)] rounded-md"
+            }
+          >
+            <APITable />
+          </div>
         </div>
-        <div className={"px-[1.5rem]"}>
-          <APITable />
-        </div>
+        {/*<div className="mx-[1.5rem] px-[1.5rem] card border-b flex justify-between rounded-md">*/}
+        {/*  */}
+        {/*</div>*/}
       </Dashboard>
     </>
   );
