@@ -1,17 +1,16 @@
 import React from "react";
 import Dashboard from "@/components/layout";
-import megaPhoneImg from "../utility/assests/oc-megaphone.svg";
+import megaPhoneImg from "@/utility/assests/oc-megaphone.svg";
 import Link from "next/link";
 import Image from "next/image";
-import profilePic from "../utility/assests/img9.jpg";
-import excelImg from "../utility/assests/excel-icon.svg";
-import card1 from "../utility/assests/card-1.svg";
-import card2 from "../utility/assests/card-2.svg";
-import card3 from "../utility/assests/card-3.svg";
+import profilePic from "@/utility/assests/img9.jpg";
+import excelImg from "@/utility/assests/excel-icon.svg";
+import card1 from "@/utility/assests/card-1.svg";
+import card2 from "@/utility/assests/card-2.svg";
+import card3 from "@/utility/assests/card-3.svg";
 
 import {
   BsArrowClockwise,
-  BsCommand,
   BsJournalBookmarkFill,
   BsPaperclip,
   BsPatchCheckFill,
