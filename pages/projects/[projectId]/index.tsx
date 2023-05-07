@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Dashboard from "@/components/layout";
 import Image from "next/image";
-import logo1 from "../../utility/assests/guideline-icon.svg";
+import logo1 from "../../../utility/assests/guideline-icon.svg";
 import {
   BsChevronDown,
   BsDownload,
   BsPeopleFill,
   BsShareFill,
 } from "react-icons/bs";
-import image1 from "../../utility/assests/img9.jpg";
-import image2 from "../../utility/assests/img10.jpg";
+import image1 from "../../../utility/assests/img9.jpg";
+import image2 from "../../../utility/assests/img10.jpg";
 import Link from "next/link";
 import Card from "@/components/cards/Card";
 import StatusBox from "@/components/status/StatusBox";
@@ -25,11 +25,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { graphData } from "@/utility/data";
-import copyImg from "../../utility/assests/copy-icon.svg";
-import printImg from "../../utility/assests/print-icon.svg";
-import excelImg from "../../utility/assests/excel-icon.svg";
-import pdfImg from "../../utility/assests/pdf-icon.svg";
-import csvImg from "../../utility/assests/placeholder-csv-format.svg";
+import copyImg from "../../../utility/assests/copy-icon.svg";
+import printImg from "../../../utility/assests/print-icon.svg";
+import excelImg from "../../../utility/assests/excel-icon.svg";
+import pdfImg from "../../../utility/assests/pdf-icon.svg";
+import csvImg from "../../../utility/assests/placeholder-csv-format.svg";
 import CardHeader from "@/components/cards/CardHeader";
 import PieChart from "@/components/PieChart";
 
