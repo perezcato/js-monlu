@@ -25,9 +25,11 @@ const Details = () => {
     projectName: "",
     projectDescription: "",
   };
+
   const [selectedFile, setSelectedFile] = useState<
     StaticImageData | string | ArrayBuffer | null
   >(projectImage);
+
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
     const photo = e.target.files[0];

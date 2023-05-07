@@ -10,6 +10,9 @@ import {
   BsBarChart,
   BsCheck2Circle,
   BsAward,
+  BsKey,
+  BsGraphUp,
+  BsGraphDown,
 } from "react-icons/bs";
 import memberPic from "../utility/assests/img3.jpg";
 import { StaticImageData } from "next/image";
@@ -21,7 +24,7 @@ type sideData = {
   path: string;
   icon: any;
   label?: string;
-  subNav: { title: string; path: string; icon: any }[];
+  subNav?: { title: string; path: string; icon: any }[];
 }[];
 
 type PieData = { id: string; label: string; value: number; color: string }[];
@@ -44,10 +47,62 @@ export type statusDataProps = (
   | { Icon: any; title: string; value: string; closedTask: string }
 )[];
 
+type APICardData = {
+  title: string;
+  value: string;
+  percentage: string;
+  prevValue: string;
+
+  status?: string;
+}[];
+
+type APITableData = {
+  name: string;
+  apiKey: string;
+  status: string;
+  created: string;
+}[];
+export const APICardData: APICardData = [
+  {
+    title: "Project",
+    value: "150",
+    percentage: "12",
+    prevValue: "5",
+  },
+  {
+    title: "Successful conversions",
+    value: "35",
+    percentage: "7",
+    prevValue: "5",
+    status: "success",
+  },
+  {
+    title: "Failed conversions",
+    value: "5",
+    percentage: "2",
+    prevValue: "11",
+    status: "failed",
+  },
+];
+export const APITableData: APITableData = [
+  {
+    name: "Streamlab",
+    apiKey: "GFKBH23BR2H3R29HO2N3",
+    status: "success",
+    created: "March 11, 2020",
+  },
+  {
+    name: "FrontMail",
+    apiKey: "GFKBH23BR2H3R29HO2N3",
+    status: "failed",
+    created: "May 2, 2023",
+  },
+];
+
 export const sidebarData: sideData = [
   {
     title: "Project",
-    path: "/projects",
+    path: "",
     icon: BsFolder2Open,
     label: "Pages",
     subNav: [
@@ -60,7 +115,7 @@ export const sidebarData: sideData = [
   },
   {
     title: "Accounts",
-    path: "/accounts",
+    path: "",
     icon: BsPersonLinesFill,
     subNav: [
       {
@@ -77,7 +132,7 @@ export const sidebarData: sideData = [
   },
   {
     title: "Structure",
-    path: "/accounts",
+    path: "",
     icon: BsMenuUp,
     subNav: [
       {
@@ -91,6 +146,15 @@ export const sidebarData: sideData = [
         icon: BsPerson,
       },
     ],
+  },
+];
+
+export const sidebarDataApp: sideData = [
+  {
+    title: "API",
+    path: "/apikey",
+    icon: BsKey,
+    label: "Apps",
   },
 ];
 

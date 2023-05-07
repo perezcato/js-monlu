@@ -1,5 +1,5 @@
 import React from "react";
-import { sidebarData } from "@/utility/data";
+import { sidebarData, sidebarDataApp } from "@/utility/data";
 import Sidemenu from "@/components/layout/sidemenu";
 import { BsHouseDoor } from "react-icons/bs";
 import Image from "next/image";
@@ -30,10 +30,10 @@ const Sidenav = () => {
           </Link>
         </div>
 
-        <div className="px-4 text-[10.5px] font-semibold text-gray-500 mt-6">
-          PAGES
-        </div>
         {sidebarData.map((item, index) => (
+          <Sidemenu item={item} key={index} label={item.label} />
+        ))}
+        {sidebarDataApp.map((item, index) => (
           <Sidemenu item={item} key={index} label={item.label} />
         ))}
       </div>
