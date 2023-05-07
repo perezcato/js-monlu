@@ -41,8 +41,8 @@ const APITable = () => {
           </tr>
         </thead>
         <tbody>
-          {APITableData.map((data) => (
-            <tr className="text-[#677788]">
+          {APITableData.map((data, key) => (
+            <tr key={key} className="text-[#677788]">
               <td className="px-10 py-3">
                 <input type="checkbox" />
               </td>

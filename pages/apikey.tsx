@@ -161,8 +161,9 @@ const Apikey = () => {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-[1rem] py-[2rem] px-[1.5rem]">
-          {APICardData.map((data) => (
+          {APICardData.map((data, key) => (
             <CardApi
+              key={key}
               title={data.title}
               value={data.value}
               percentage={data.percentage}
